@@ -1,0 +1,22 @@
+{
+    "name": "fgo-planner-server-data",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/alvinquach/fgo-planner-shared-modules.git"
+    },
+    "author": "Alvin Quach",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/alvinquach/fgo-planner-shared-modules/issues"
+    },
+    "homepage": "https://github.com/alvinquach/fgo-planner-shared-modules/data#readme",
+    "main": "index.ts",
+    "dependencies": {
+        "mongoose": "^5.11.15"
+    },
+    "devDependencies": {
+        "@types/mongoose": "^5.10.3",
+        "typescript": "^4.2.3"
+    }
+}
