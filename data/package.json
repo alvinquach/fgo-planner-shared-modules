@@ -1,6 +1,9 @@
 {
     "name": "fgo-planner-server-data",
     "version": "1.0.0",
+    "scripts": {
+        "build": "tsc --strict"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/alvinquach/fgo-planner-shared-modules.git"
