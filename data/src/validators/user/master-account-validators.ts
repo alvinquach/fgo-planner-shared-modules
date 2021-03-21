@@ -14,7 +14,7 @@ export class MasterAccountValidators {
      */
     static isFriendIdFormatValid(id: string): boolean {
         return MasterAccountValidators._FriendIdFormatValidationRegex.test(id);
-    };
+    }
 
     /**
      * Validator function that tests the friend ID format validation RegExp against
@@ -26,7 +26,7 @@ export class MasterAccountValidators {
             return true;
         }
         return MasterAccountValidators._FriendIdFormatValidationRegex.test(id);
-    };
+    }
 
     /**
      * Validator function that checks if a servant's fou upgrade value is valid. If
@@ -38,7 +38,7 @@ export class MasterAccountValidators {
             return value % 10 === 0;
         }
         return value % 20 === 0;
-    };
+    }
 
     static servantInstanceIdsUnique(servants: MasterServant[]): boolean {
         if (!servants.length) {

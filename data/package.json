@@ -1,8 +1,10 @@
 {
-    "name": "fgo-planner-server-data",
+    "name": "fgo-planner-data",
     "version": "1.0.0",
     "scripts": {
-        "build": "tsc --strict"
+        "build": "npm run build-ts && npm run lint",
+        "build-ts": "tsc --strict",
+        "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix"
     },
     "repository": {
         "type": "git",
@@ -20,6 +22,9 @@
     },
     "devDependencies": {
         "@types/mongoose": "^5.10.3",
+        "@typescript-eslint/eslint-plugin": "^4.18.0",
+        "@typescript-eslint/parser": "^4.18.0",
+        "eslint": "^7.22.0",
         "typescript": "^4.2.3"
     }
 }

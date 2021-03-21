@@ -9,7 +9,6 @@ class MasterAccountValidators {
     static isFriendIdFormatValid(id) {
         return MasterAccountValidators._FriendIdFormatValidationRegex.test(id);
     }
-    ;
     /**
      * Validator function that tests the friend ID format validation RegExp against
      * the given friend ID string to check if it's in a valid format. Null or empty
@@ -21,7 +20,6 @@ class MasterAccountValidators {
         }
         return MasterAccountValidators._FriendIdFormatValidationRegex.test(id);
     }
-    ;
     /**
      * Validator function that checks if a servant's fou upgrade value is valid. If
      * the value is less than or equal to 1000, the value must be a multiple of 10.
@@ -33,7 +31,6 @@ class MasterAccountValidators {
         }
         return value % 20 === 0;
     }
-    ;
     static servantInstanceIdsUnique(servants) {
         if (!servants.length) {
             return true;
