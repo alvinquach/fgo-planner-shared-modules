@@ -16,7 +16,7 @@
         "url": "https://github.com/alvinquach/fgo-planner-shared-modules/issues"
     },
     "homepage": "https://github.com/alvinquach/fgo-planner-shared-modules/data#readme",
-    "main": "index.ts",
+    "main": "lib/index.js",
     "dependencies": {
         "mongoose": "^5.11.15"
     },
