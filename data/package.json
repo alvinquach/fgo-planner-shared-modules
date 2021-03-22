@@ -1,5 +1,5 @@
 {
-    "name": "fgo-planner-shared-modules-data",
+    "name": "@fgo-planner/data",
     "version": "1.0.0",
     "scripts": {
         "build": "npm run build-ts && npm run lint",
