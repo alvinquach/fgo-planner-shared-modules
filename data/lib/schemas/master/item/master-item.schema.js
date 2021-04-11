@@ -26,4 +26,7 @@ exports.MasterItemSchema = new mongoose_1.Schema({
         },
         default: 0
     }
-}, { _id: false, storeSubdocValidationError: false });
+}, {
+    _id: false,
+    storeSubdocValidationError: false
+});

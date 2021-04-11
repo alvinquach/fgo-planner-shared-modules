@@ -168,7 +168,10 @@ const GameEventRewardSourceMasterItemsSchema = new mongoose_1.Schema({
         },
         default: 0
     }
-}, { _id: false, storeSubdocValidationError: false });
+}, {
+    _id: false,
+    storeSubdocValidationError: false
+});
 /**
  * Mongoose schema for the `GameEventRewardSource.enhancementItems` property.
  */
@@ -192,7 +195,10 @@ const GameEventRewardSourceEnhancementItemsSchema = new mongoose_1.Schema({
         },
         default: 1
     }
-}, { _id: false, storeSubdocValidationError: false });
+}, {
+    _id: false,
+    storeSubdocValidationError: false
+});
 /**
  * Mongoose schema for the `GameEventRewardSource` type.
  */
@@ -224,4 +230,7 @@ exports.GameEventRewardSourceSchema = new mongoose_1.Schema({
         required: true,
         default: []
     }
-}, { _id: false, storeSubdocValidationError: false });
+}, {
+    _id: false,
+    storeSubdocValidationError: false
+});

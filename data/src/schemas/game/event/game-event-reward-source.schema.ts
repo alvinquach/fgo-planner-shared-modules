@@ -1,4 +1,4 @@
-import { Schema } from 'mongoose';
+import { Schema, SchemaDefinition } from 'mongoose';
 import { GameEventRewardSourceType } from '../../../types';
 import { CommonValidators, ValidationStrings } from '../../../validators';
 
@@ -166,7 +166,10 @@ const GameEventRewardSourceMasterItemsSchema = new Schema({
         },
         default: 0
     }
-}, { _id: false, storeSubdocValidationError: false });
+} as SchemaDefinition, {
+    _id: false,
+    storeSubdocValidationError: false
+});
 
 
 /**
@@ -192,7 +195,10 @@ const GameEventRewardSourceEnhancementItemsSchema = new Schema({
         },
         default: 1
     }
-}, { _id: false, storeSubdocValidationError: false });
+} as SchemaDefinition, {
+    _id: false,
+    storeSubdocValidationError: false
+});
 
 /**
  * Mongoose schema for the `GameEventRewardSource` type.
@@ -225,4 +231,7 @@ export const GameEventRewardSourceSchema = new Schema({
         required: true,
         default: []
     }
-}, { _id: false, storeSubdocValidationError: false });
+} as SchemaDefinition, {
+    _id: false,
+    storeSubdocValidationError: false
+});

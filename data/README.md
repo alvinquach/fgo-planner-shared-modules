@@ -1,1 +1,1 @@
-fgo-planner-shared-modules
+Run command `npm run build` to build. Recommend clearing or deleting the `/lib` directory before building.

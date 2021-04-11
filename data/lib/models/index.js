@@ -14,4 +14,5 @@ __exportStar(require("./game/event/game-event.model"), exports);
 __exportStar(require("./game/item/game-item.model"), exports);
 __exportStar(require("./game/servant/game-servant.model"), exports);
 __exportStar(require("./master/master-account.model"), exports);
+__exportStar(require("./master/master-plan.model"), exports);
 __exportStar(require("./user/user.model"), exports);

@@ -1,4 +1,4 @@
-import { Schema } from 'mongoose';
+import { Schema, SchemaDefinition } from 'mongoose';
 import { ValidationStrings } from '../../../validators';
 
 /**
@@ -24,7 +24,10 @@ const GameServantEnhancementMaterialsSchema = new Schema({
         },
         default: 1
     }
-}, { _id: false, storeSubdocValidationError: false });
+} as SchemaDefinition, {
+    _id: false,
+    storeSubdocValidationError: false
+});
 
 /**
  * Mongoose schema for the `GameServantEnhancement` type.
@@ -45,4 +48,7 @@ export const GameServantEnhancementSchema = new Schema({
         required: true,
         default: []
     }
-}, { _id: false, storeSubdocValidationError: false });
+} as SchemaDefinition, {
+    _id: false,
+    storeSubdocValidationError: false
+});

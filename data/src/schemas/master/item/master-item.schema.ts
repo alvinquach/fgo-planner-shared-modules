@@ -1,4 +1,4 @@
-import { Schema } from 'mongoose';
+import { Schema, SchemaDefinition } from 'mongoose';
 import { ValidationStrings } from '../../../validators';
 
 /**
@@ -24,4 +24,7 @@ export const MasterItemSchema = new Schema({
         },
         default: 0
     }
-}, { _id: false, storeSubdocValidationError: false });
+} as SchemaDefinition, {
+    _id: false,
+    storeSubdocValidationError: false
+});

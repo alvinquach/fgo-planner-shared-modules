@@ -26,7 +26,10 @@ const GameServantEnhancementMaterialsSchema = new mongoose_1.Schema({
         },
         default: 1
     }
-}, { _id: false, storeSubdocValidationError: false });
+}, {
+    _id: false,
+    storeSubdocValidationError: false
+});
 /**
  * Mongoose schema for the `GameServantEnhancement` type.
  */
@@ -46,4 +49,7 @@ exports.GameServantEnhancementSchema = new mongoose_1.Schema({
         required: true,
         default: []
     }
-}, { _id: false, storeSubdocValidationError: false });
+}, {
+    _id: false,
+    storeSubdocValidationError: false
+});

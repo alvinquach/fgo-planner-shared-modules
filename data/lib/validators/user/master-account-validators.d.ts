@@ -1,4 +1,3 @@
-import { MasterServant } from '../../types';
 export declare class MasterAccountValidators {
     /**
      * Regex for checking if a friend ID string is in a valid format. Friend IDs
@@ -22,5 +21,7 @@ export declare class MasterAccountValidators {
      * Otherwise, the value must be a multiple of 20.
      */
     static isFouValueValid(value: number): boolean;
-    static servantInstanceIdsUnique(servants: MasterServant[]): boolean;
+    static servantInstanceIdsUnique(servants: {
+        instanceId: number;
+    }[]): boolean;
 }

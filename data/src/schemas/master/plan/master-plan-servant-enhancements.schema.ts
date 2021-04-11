@@ -2,19 +2,17 @@ import { Schema, SchemaDefinition } from 'mongoose';
 import { CommonValidators, MasterAccountValidators, ValidationStrings } from '../../../validators';
 
 /**
- * Mongoose schema for the `MasterServant.skills` property.
+ * Mongoose schema for the `MasterPlanServantEnhancements.skills` property.
  */
-const MasterServantSkillLevelsSchema = new Schema({
+const MasterPlanServantEnhancementsSkillsSchema = new Schema({
     1: {
         type: Number,
-        required: true,
         min: 1,
         max: 10,
         validate: {
             validator: CommonValidators.isNullOrInteger,
             message: ValidationStrings.NumberInteger
-        },
-        default: 1
+        }
     },
     2: {
         type: Number,
@@ -37,66 +35,24 @@ const MasterServantSkillLevelsSchema = new Schema({
 });
 
 /**
- * Mongoose schema for the `MasterServant` type.
+ * Mongoose schema for the `MasterPlanServantEnhancements` type.
  */
-export const MasterServantSchema = new Schema({
-    instanceId: {
-        type: Number,
-        required: true,
-        validate: {
-            // TODO This must be unique
-            validator: Number.isInteger,
-            message: ValidationStrings.NumberInteger
-        }
-    },
-    gameId: {
-        type: Number,
-        required: true,
-        min: 0,
-        validate: {
-            validator: Number.isInteger,
-            message: ValidationStrings.NumberInteger
-        }
-    },
-    np: {
-        type: Number,
-        required: true,
-        min: 1,
-        max: 5,
-        validate: {
-            validator: Number.isInteger,
-            message: ValidationStrings.NumberInteger
-        },
-        default: 1
-    },
+export const MasterPlanServantEnhancementsSchema = new Schema({
     level: {
         type: Number,
-        required: true,
         min: 1,
         max: 100,
         validate: {
-            validator: Number.isInteger,
+            validator: CommonValidators.isNullOrInteger,
             message: ValidationStrings.NumberInteger
-        },
-        default: 1
+        }
     },
     ascension: {
         type: Number,
-        required: true,
         min: 0,
         max: 4,
         validate: {
             validator: Number.isInteger,
-            message: ValidationStrings.NumberInteger
-        },
-        default: 0
-    },
-    bond: {
-        type: Number,
-        min: 0,
-        max: 15,
-        validate: {
-            validator: CommonValidators.isNullOrInteger,
             message: ValidationStrings.NumberInteger
         }
     },
@@ -119,16 +75,12 @@ export const MasterServantSchema = new Schema({
         }
     },
     skills: {
-        type: MasterServantSkillLevelsSchema,
+        type: MasterPlanServantEnhancementsSkillsSchema,
         required: true,
         default: {}
     },
     costumes: {
         type: [Number]
-    },
-    acquired: {
-        type: Date
-        // TODO Add range validation
     }
 } as SchemaDefinition, {
     _id: false,

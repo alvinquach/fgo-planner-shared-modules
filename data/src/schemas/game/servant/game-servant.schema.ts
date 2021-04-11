@@ -53,7 +53,10 @@ const GameServantSkillMaterialsSchema = new Schema({
         required: true,
         default: {}
     }
-}, { _id: false, storeSubdocValidationError: false });
+} as SchemaDefinition, {
+    _id: false,
+    storeSubdocValidationError: false
+});
 
 /**
  * Mongoose schema for the `GameServant.ascensionMaterials` property.
@@ -79,7 +82,10 @@ const GameServantAscensionMaterialsSchema = new Schema({
         required: true,
         default: {}
     }
-}, { _id: false, storeSubdocValidationError: false });
+} as SchemaDefinition, {
+    _id: false,
+    storeSubdocValidationError: false
+});
 
 /**
  * Mongoose schema for the `GameServant.metadata` property.
@@ -96,7 +102,10 @@ const GameServantMetadataSchema = new Schema({
         required: true,
         default: []
     }
-}, { _id: false, storeSubdocValidationError: false });
+} as SchemaDefinition, {
+    _id: false,
+    storeSubdocValidationError: false
+});
 
 /**
  * Mongoose schema definition for the `GameServant` data schema.

@@ -40,7 +40,7 @@ export class MasterAccountValidators {
         return value % 20 === 0;
     }
 
-    static servantInstanceIdsUnique(servants: MasterServant[]): boolean {
+    static servantInstanceIdsUnique(servants: { instanceId: number }[]): boolean {
         if (!servants.length) {
             return true;
         }

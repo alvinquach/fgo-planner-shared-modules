@@ -1,4 +1,4 @@
-import { Schema } from 'mongoose';
+import { Schema, SchemaDefinition } from 'mongoose';
 
 /**
  * Mongoose schema for the `ExternalLink` type.
@@ -13,4 +13,7 @@ export const ExternalLinkSchema = new Schema({
         required: true,
         // TODO Add validation
     }
-}, { _id: false, storeSubdocValidationError: false });
+} as SchemaDefinition, {
+    _id: false,
+    storeSubdocValidationError: false
+});

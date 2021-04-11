@@ -15,4 +15,7 @@ exports.ExternalLinkSchema = new mongoose_1.Schema({
         required: true,
         // TODO Add validation
     }
-}, { _id: false, storeSubdocValidationError: false });
+}, {
+    _id: false,
+    storeSubdocValidationError: false
+});
