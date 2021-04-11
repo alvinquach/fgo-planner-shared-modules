@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MasterPlanSchemaDefinition = void 0;
 const bson_1 = require("bson");
 const mongoose_1 = require("mongoose");
-const validators_1 = require("src/validators");
+const validators_1 = require("../../../validators");
 const master_item_schema_1 = require("../item/master-item.schema");
 const master_plan_servant_schema_1 = require("./master-plan-servant.schema");
 /**

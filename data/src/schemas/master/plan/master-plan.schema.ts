@@ -1,6 +1,6 @@
 import { ObjectId } from 'bson';
 import { Schema, SchemaDefinition } from 'mongoose';
-import { MasterAccountValidators, ValidationStrings } from 'src/validators';
+import { MasterAccountValidators, ValidationStrings } from '../../../validators';
 import { MasterItemSchema } from '../item/master-item.schema';
 import { MasterPlanServantSchema } from './master-plan-servant.schema';
 
