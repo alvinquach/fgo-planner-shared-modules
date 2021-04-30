@@ -54,7 +54,7 @@ export declare type GameServant = Entity<number> & {
         3: GameServantEnhancement;
         4: GameServantEnhancement;
     };
-    costume: Record<number, GameServantCostume>;
+    costumes: Record<number, GameServantCostume>;
     metadata: {
         displayName?: string;
         fgoManagerName?: string;

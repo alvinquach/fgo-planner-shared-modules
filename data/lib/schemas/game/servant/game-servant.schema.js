@@ -257,7 +257,7 @@ exports.GameServantSchemaDefinition = {
     ascensionMaterials: {
         type: GameServantAscensionMaterialsSchema
     },
-    costume: {
+    costumes: {
         type: mongoose_1.Schema.Types.Map,
         of: {
             type: game_servant_costume_schema_1.GameServantCostumeSchema

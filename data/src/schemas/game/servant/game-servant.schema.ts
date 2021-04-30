@@ -258,7 +258,7 @@ export const GameServantSchemaDefinition: SchemaDefinition = {
     ascensionMaterials: {
         type: GameServantAscensionMaterialsSchema
     },
-    costume: {
+    costumes: {
         type: Schema.Types.Map,
         of: {
             type: GameServantCostumeSchema

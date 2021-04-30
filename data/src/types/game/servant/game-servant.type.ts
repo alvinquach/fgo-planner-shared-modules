@@ -89,7 +89,7 @@ export type GameServant = Entity<number> & {
 
     };
 
-    costume: Record<number, GameServantCostume>;
+    costumes: Record<number, GameServantCostume>;
 
     metadata: {
 
