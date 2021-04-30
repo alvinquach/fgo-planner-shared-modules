@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GameServantCostumeSchema = void 0;
 const mongoose_1 = require("mongoose");
-const validators_1 = require("src/validators");
+const validators_1 = require("../../../validators");
 const game_servant_enhancement_schema_1 = require("./game-servant-enhancement.schema");
 /**
  * Mongoose schema for the `GameServantCostume` type.

@@ -1,5 +1,5 @@
 import { Schema, SchemaDefinition } from 'mongoose';
-import { ValidationStrings } from 'src/validators';
+import { ValidationStrings } from '../../../validators';
 import { GameServantEnhancementSchema } from './game-servant-enhancement.schema';
 
 /**
