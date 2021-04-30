@@ -261,7 +261,9 @@ exports.GameServantSchemaDefinition = {
         type: mongoose_1.Schema.Types.Map,
         of: {
             type: game_servant_costume_schema_1.GameServantCostumeSchema
-        }
+        },
+        required: true,
+        default: {}
     },
     metadata: {
         type: GameServantMetadataSchema,

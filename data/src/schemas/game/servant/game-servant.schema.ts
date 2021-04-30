@@ -262,7 +262,9 @@ export const GameServantSchemaDefinition: SchemaDefinition = {
         type: Schema.Types.Map,
         of: {
             type: GameServantCostumeSchema
-        }
+        },
+        required: true,
+        default: {}
     },
     metadata: {
         type: GameServantMetadataSchema,
