@@ -5,6 +5,7 @@ const mongoose_1 = require("mongoose");
 const types_1 = require("../../../types");
 const validators_1 = require("../../../validators");
 const external_link_schema_1 = require("../../external-link.schema");
+const game_servant_costume_schema_1 = require("./game-servant-costume.schema");
 const game_servant_enhancement_schema_1 = require("./game-servant-enhancement.schema");
 /**
  * Mongoose schema for the `GameServant.skillMaterials` property.
@@ -256,10 +257,10 @@ exports.GameServantSchemaDefinition = {
     ascensionMaterials: {
         type: GameServantAscensionMaterialsSchema
     },
-    costumeMaterials: {
+    costume: {
         type: mongoose_1.Schema.Types.Map,
         of: {
-            type: game_servant_enhancement_schema_1.GameServantEnhancementSchema
+            type: game_servant_costume_schema_1.GameServantCostumeSchema
         }
     },
     metadata: {

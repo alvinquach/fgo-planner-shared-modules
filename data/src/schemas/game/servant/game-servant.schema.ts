@@ -2,6 +2,7 @@ import { Schema, SchemaDefinition } from 'mongoose';
 import { GameServantAttribute, GameServantClass, GameServantGender } from '../../../types';
 import { ValidationStrings } from '../../../validators';
 import { ExternalLinkSchema } from '../../external-link.schema';
+import { GameServantCostumeSchema } from './game-servant-costume.schema';
 import { GameServantEnhancementSchema } from './game-servant-enhancement.schema';
 
 /**
@@ -257,10 +258,10 @@ export const GameServantSchemaDefinition: SchemaDefinition = {
     ascensionMaterials: {
         type: GameServantAscensionMaterialsSchema
     },
-    costumeMaterials: {
+    costume: {
         type: Schema.Types.Map,
         of: {
-            type: GameServantEnhancementSchema
+            type: GameServantCostumeSchema
         }
     },
     metadata: {
