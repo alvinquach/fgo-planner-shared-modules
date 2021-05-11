@@ -27,6 +27,7 @@ __exportStar(require("./game/servant/game-servant-gender.enum"), exports);
 __exportStar(require("./game/servant/game-servant-growth-curve.enum"), exports);
 __exportStar(require("./game/servant/game-servant-rarity.type"), exports);
 __exportStar(require("./game/servant/game-servant.type"), exports);
+__exportStar(require("./game/soundtrack/game-soundtrack.type"), exports);
 __exportStar(require("./master/account/master-account.type"), exports);
 __exportStar(require("./master/item/master-item.type"), exports);
 __exportStar(require("./master/plan/master-plan-servant-enhancements.type"), exports);

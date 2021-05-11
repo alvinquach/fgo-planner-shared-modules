@@ -61,5 +61,29 @@ exports.MasterAccountSchemaDefinition = {
             message: validators_1.ValidationStrings.MasterServantUniqueInstanceId
         },
         default: []
+    },
+    costumes: {
+        type: [Number],
+        required: true,
+        default: []
+    },
+    bondLevels: {
+        type: Map,
+        of: {
+            type: Number,
+            min: 0,
+            max: 15,
+            validate: {
+                validator: validators_1.CommonValidators.isNullOrInteger,
+                message: validators_1.ValidationStrings.NumberInteger
+            }
+        },
+        required: true,
+        default: {}
+    },
+    soundtracks: {
+        type: [Number],
+        required: true,
+        default: []
     }
 };

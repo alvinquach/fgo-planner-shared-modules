@@ -2,6 +2,7 @@ export * from './external-link.schema';
 export * from './game/event/game-event.schema';
 export * from './game/item/game-item.schema';
 export * from './game/servant/game-servant.schema';
+export * from './game/soundtrack/game-soundtrack.schema';
 export * from './master/account/master-account.schema';
 export * from './master/item/master-item.schema';
 export * from './master/plan/master-plan.schema';

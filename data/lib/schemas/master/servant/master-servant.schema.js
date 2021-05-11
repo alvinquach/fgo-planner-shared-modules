@@ -92,15 +92,6 @@ exports.MasterServantSchema = new mongoose_1.Schema({
         },
         default: 0
     },
-    bond: {
-        type: Number,
-        min: 0,
-        max: 15,
-        validate: {
-            validator: validators_1.CommonValidators.isNullOrInteger,
-            message: validators_1.ValidationStrings.NumberInteger
-        }
-    },
     fouAtk: {
         type: Number,
         min: 0,
@@ -123,9 +114,6 @@ exports.MasterServantSchema = new mongoose_1.Schema({
         type: MasterServantSkillLevelsSchema,
         required: true,
         default: {}
-    },
-    costumes: {
-        type: [Number]
     },
     acquired: {
         type: Date

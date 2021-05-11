@@ -1,6 +1,7 @@
 import { ObjectId } from 'bson';
 import { Entity } from '../../entity.type';
 import { MasterItem } from '../item/master-item.type';
+import { MasterServantBondLevel } from '../servant/master-servant-bond-level.type';
 import { MasterServant } from '../servant/master-servant.type';
 
 export type MasterAccount = Entity<ObjectId> & {
@@ -21,5 +22,11 @@ export type MasterAccount = Entity<ObjectId> & {
     items: MasterItem[];
 
     servants: MasterServant[];
+
+    costumes: number[];
+    
+    bondLevels: Record<number, MasterServantBondLevel>;
+
+    soundtracks: number[];
 
 };

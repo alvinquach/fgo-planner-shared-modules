@@ -10,6 +10,9 @@ export declare type MasterServant = {
     np: MasterServantNoblePhantasmLevel;
     level: number;
     ascension: MasterServantAscensionLevel;
+    /**
+     * @deprecated Bond levels are now stored at the account level.
+     */
     bond?: MasterServantBondLevel;
     fouAtk?: number;
     fouHp?: number;
@@ -18,6 +21,9 @@ export declare type MasterServant = {
         2?: number;
         3?: number;
     };
+    /**
+     * @deprecated Unlocked costumes are now stored at the account level.
+     */
     costumes?: number[];
     acquired?: Date;
 };

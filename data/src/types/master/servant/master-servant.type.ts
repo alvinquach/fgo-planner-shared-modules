@@ -17,6 +17,9 @@ export type MasterServant = {
 
     ascension: MasterServantAscensionLevel;
 
+    /**
+     * @deprecated Bond levels are now stored at the account level.
+     */
     bond?: MasterServantBondLevel;
 
     fouAtk?: number;
@@ -33,6 +36,9 @@ export type MasterServant = {
 
     };
 
+    /**
+     * @deprecated Unlocked costumes are now stored at the account level.
+     */
     costumes?: number[];
 
     acquired?: Date;

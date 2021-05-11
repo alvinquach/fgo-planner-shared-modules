@@ -91,15 +91,6 @@ export const MasterServantSchema = new Schema({
         },
         default: 0
     },
-    bond: {
-        type: Number,
-        min: 0,
-        max: 15,
-        validate: {
-            validator: CommonValidators.isNullOrInteger,
-            message: ValidationStrings.NumberInteger
-        }
-    },
     fouAtk: {
         type: Number,
         min: 0,
@@ -122,9 +113,6 @@ export const MasterServantSchema = new Schema({
         type: MasterServantSkillLevelsSchema,
         required: true,
         default: {}
-    },
-    costumes: {
-        type: [Number]
     },
     acquired: {
         type: Date
