@@ -9,6 +9,7 @@ export declare class ValidationStrings {
     static readonly NumberInteger = "Path `{PATH}` ({VALUE}) is not an integer.";
     static readonly NumberMin = "";
     static readonly NumberMax = "";
+    static readonly RgbColorValue: string;
     static readonly MasterFriendIdFormat: string;
     static readonly MasterServantFirstSkillUnlocked: string;
     static readonly MasterServantUniqueInstanceId: string;

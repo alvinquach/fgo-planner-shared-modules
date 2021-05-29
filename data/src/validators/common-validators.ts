@@ -5,7 +5,7 @@ export class CommonValidators {
      * This can be used as a validator function for optional number fields in
      * place of `Number.isInteger`.
      */
-    static isNullOrInteger(number: number) {
+    static isNullOrInteger(number: number): boolean {
         if (number == null) {
             return true;
         }

@@ -1,4 +1,5 @@
 import { SchemaDefinition } from 'mongoose';
+import { UserPreferencesSchema } from './user-preferences.schema';
 
 /**
  * Mongoose schema definition for the `User` type.
@@ -30,5 +31,10 @@ export const UserSchemaDefinition: SchemaDefinition = {
         required: true,
         default: true,
         index: true
+    },
+    userPrefs: {
+        type: UserPreferencesSchema,
+        required: true,
+        default: {}
     }
 };

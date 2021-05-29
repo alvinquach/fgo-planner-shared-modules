@@ -1,14 +1,17 @@
+import { ObjectId } from 'bson';
 import mongoose, { Document, Model, NativeError, Schema } from 'mongoose';
 import { UserSchemaDefinition } from '../../schemas';
-import { User } from '../../types';
+import { User, UserPreferences } from '../../types';
 
 export type UserDocument = Document & User;
 
 type UserModel = Model<UserDocument> & {
 
-    setEnabledStatus: (id: string, status: boolean, callback: (err: NativeError, doc: UserDocument) => void) => void;
+    setEnabledStatus: (id: ObjectId, status: boolean, callback: (err: NativeError, doc: UserDocument) => void) => void;
 
-    setAdminStatus: (id: string, isAdmin: boolean, callback: (err: NativeError, doc: UserDocument) => void) => void;
+    setAdminStatus: (id: ObjectId, isAdmin: boolean, callback: (err: NativeError, doc: UserDocument) => void) => void;
+
+    getUserPreferences: (id: ObjectId) => Promise<UserPreferences | null>;
 
 };
 
@@ -16,7 +19,7 @@ type UserModel = Model<UserDocument> & {
 
 const setEnabledStatus = function (
     this: UserModel,
-    id: string,
+    id: ObjectId,
     status: boolean,
     callback: (err: NativeError, doc: UserDocument) => void
 ) {
@@ -24,7 +27,7 @@ const setEnabledStatus = function (
 };
 
 const setAdminStatus = function (this: UserModel,
-    id: string,
+    id: ObjectId,
     isAdmin: boolean,
     callback: (err: NativeError, doc: UserDocument) => void
 ) {
@@ -37,6 +40,17 @@ const setAdminStatus = function (this: UserModel,
     this.updateOne({ _id: id }, update, { new: true }, callback);
 };
 
+const getUserPreferences = async function (
+    this: UserModel,
+    id: ObjectId
+): Promise<UserPreferences | null> {
+    const doc = await this.findById(id, { userPrefs: 1 });
+    if (!doc) {
+        return null;
+    }
+    return doc.userPrefs;
+};
+
 //#endregion
 
 /**
@@ -44,7 +58,8 @@ const setAdminStatus = function (this: UserModel,
  */
 const Statics = {
     setEnabledStatus,
-    setAdminStatus
+    setAdminStatus,
+    getUserPreferences
 };
 
 /**

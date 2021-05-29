@@ -25,6 +25,8 @@ export class ValidationStrings {
 
     static readonly NumberMax = ''; // TODO Implement this
 
+    static readonly RgbColorValue = `${ValidationStrings.GenericInvalidFormat} Value must be an integer from 0-255.`;
+
     //#endregion
     
 

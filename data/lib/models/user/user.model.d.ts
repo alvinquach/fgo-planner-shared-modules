@@ -1,9 +1,11 @@
+import { ObjectId } from 'bson';
 import { Document, Model, NativeError } from 'mongoose';
-import { User } from '../../types';
+import { User, UserPreferences } from '../../types';
 export declare type UserDocument = Document & User;
 declare type UserModel = Model<UserDocument> & {
-    setEnabledStatus: (id: string, status: boolean, callback: (err: NativeError, doc: UserDocument) => void) => void;
-    setAdminStatus: (id: string, isAdmin: boolean, callback: (err: NativeError, doc: UserDocument) => void) => void;
+    setEnabledStatus: (id: ObjectId, status: boolean, callback: (err: NativeError, doc: UserDocument) => void) => void;
+    setAdminStatus: (id: ObjectId, isAdmin: boolean, callback: (err: NativeError, doc: UserDocument) => void) => void;
+    getUserPreferences: (id: ObjectId) => Promise<UserPreferences | null>;
 };
 export declare const UserModel: UserModel;
 export {};

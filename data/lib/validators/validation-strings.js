@@ -18,6 +18,7 @@ ValidationStrings.GenericInvalidValuePathOnly = 'Path `{PATH}` contains an inval
 ValidationStrings.NumberInteger = 'Path `{PATH}` ({VALUE}) is not an integer.';
 ValidationStrings.NumberMin = ''; // TODO Implement this
 ValidationStrings.NumberMax = ''; // TODO Implement this
+ValidationStrings.RgbColorValue = `${ValidationStrings.GenericInvalidFormat} Value must be an integer from 0-255.`;
 //#endregion
 //#region Master account validation messages
 ValidationStrings.MasterFriendIdFormat = `${ValidationStrings.GenericInvalidFormat} It must be exactly 9 characters long and can only contain numerical digits.`;

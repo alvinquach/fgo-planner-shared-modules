@@ -1,5 +1,6 @@
 import { ObjectId } from 'bson';
 import { Entity } from '../entity.type';
+import { UserPreferences } from './user-preferences.type';
 
 export type User = Entity<ObjectId> & {
 
@@ -12,5 +13,7 @@ export type User = Entity<ObjectId> & {
     admin?: boolean;
 
     enabled: boolean;
+
+    userPrefs: UserPreferences;
     
 };

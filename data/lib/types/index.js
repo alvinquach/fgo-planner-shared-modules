@@ -37,4 +37,5 @@ __exportStar(require("./master/servant/master-servant-ascension-level.type"), ex
 __exportStar(require("./master/servant/master-servant-bond-level.type"), exports);
 __exportStar(require("./master/servant/master-servant-noble-phantasm-level.type"), exports);
 __exportStar(require("./master/servant/master-servant.type"), exports);
+__exportStar(require("./user/user-preferences.type"), exports);
 __exportStar(require("./user/user.type"), exports);
