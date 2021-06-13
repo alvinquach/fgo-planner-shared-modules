@@ -46,15 +46,15 @@ exports.GameSoundtrackSchemaDefinition = {
     name: {
         type: String
     },
-    nameJp: {
-        type: String
-    },
-    unlocked: {
-        type: Boolean,
-        required: true,
-        default: false
-    },
     material: {
         type: GameSoundtrackMaterialSchema
+    },
+    audioUrl: {
+        type: String
+        // TODO Add URL validation
+    },
+    thumbnailUrl: {
+        type: String
+        // TODO Add URL validation
     }
 };

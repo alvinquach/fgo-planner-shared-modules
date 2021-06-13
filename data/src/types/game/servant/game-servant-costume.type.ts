@@ -6,8 +6,6 @@ export type GameServantCostume = {
 
     name?: string;
 
-    nameJp?: string;
-
     materials: GameServantEnhancement;
     
 };

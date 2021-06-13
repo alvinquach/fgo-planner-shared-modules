@@ -1,17 +1,14 @@
 import { Entity } from '../../entity.type';
 export declare type GameSoundtrack = Entity<number> & {
     name?: string;
-    nameJp?: string;
     /**
-     * Whether the soundtrack is unlocked by default.
-     */
-    unlocked: boolean;
-    /**
-     * Material required to unlock the soundtrack.
+     * Material required to unlock the soundtrack. This should be `undefined` for
+     * tracks that are already unlocked by default.
      */
     material?: {
         itemId: number;
         quantity: number;
     };
     audioUrl?: string;
+    thumbnailUrl?: string;
 };

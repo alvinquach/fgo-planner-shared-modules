@@ -20,9 +20,6 @@ export const GameServantCostumeSchema = new Schema({
         type: String,
         index: true
     },
-    nameJp: {
-        type: String
-    },
     materials: {
         type: GameServantEnhancementSchema,
         required: true,

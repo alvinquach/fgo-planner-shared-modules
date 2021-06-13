@@ -10,7 +10,6 @@ import { GameServantRarity } from './game-servant-rarity.type';
 export declare type GameServant = Entity<number> & {
     collectionNo: number;
     name?: string;
-    nameJp?: string;
     class: GameServantClass;
     rarity: GameServantRarity;
     cost: number;

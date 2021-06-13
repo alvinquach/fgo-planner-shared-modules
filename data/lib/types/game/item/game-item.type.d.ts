@@ -11,7 +11,6 @@ import { GameItemUsage } from './game-item-usage.enum';
  */
 export declare type GameItem = Entity<number> & {
     name: string;
-    nameJp?: string;
     description?: string;
     background: GameItemBackground;
     uses: GameItemUsage[];

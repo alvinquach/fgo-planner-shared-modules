@@ -20,9 +20,6 @@ exports.GameItemSchemaDefinition = {
         type: String,
         required: true
     },
-    nameJp: {
-        type: String
-    },
     description: {
         type: String
     },

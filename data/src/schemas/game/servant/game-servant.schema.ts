@@ -135,9 +135,6 @@ export const GameServantSchemaDefinition: SchemaDefinition = {
         type: String,
         index: true
     },
-    nameJp: {
-        type: String
-    },
     class: {
         type: String,
         enum: Object.keys(GameServantClass),

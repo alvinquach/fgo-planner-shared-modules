@@ -22,9 +22,6 @@ exports.GameServantCostumeSchema = new mongoose_1.Schema({
         type: String,
         index: true
     },
-    nameJp: {
-        type: String
-    },
     materials: {
         type: game_servant_enhancement_schema_1.GameServantEnhancementSchema,
         required: true,

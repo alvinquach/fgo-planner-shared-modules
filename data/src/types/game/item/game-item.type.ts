@@ -14,8 +14,6 @@ export type GameItem = Entity<number> & {
 
     name: string;
 
-    nameJp?: string;
-
     description?: string;
 
     background: GameItemBackground;

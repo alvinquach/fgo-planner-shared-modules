@@ -134,9 +134,6 @@ exports.GameServantSchemaDefinition = {
         type: String,
         index: true
     },
-    nameJp: {
-        type: String
-    },
     class: {
         type: String,
         enum: Object.keys(types_1.GameServantClass),

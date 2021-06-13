@@ -14,8 +14,6 @@ export type GameServant = Entity<number> & {
 
     name?: string;
 
-    nameJp?: string;
-
     class: GameServantClass;
 
     rarity: GameServantRarity;

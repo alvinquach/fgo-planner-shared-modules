@@ -19,9 +19,6 @@ export const GameItemSchemaDefinition: SchemaDefinition = {
         type: String,
         required: true
     },
-    nameJp: {
-        type: String
-    },
     description: {
         type: String
     },
