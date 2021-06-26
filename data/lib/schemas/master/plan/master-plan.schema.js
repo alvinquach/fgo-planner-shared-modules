@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MasterPlanSchemaDefinition = void 0;
 const bson_1 = require("bson");
 const mongoose_1 = require("mongoose");
-const game_item_quantity_schema_1 = require("src/schemas/game/item/game-item-quantity.schema");
 const validators_1 = require("../../../validators");
+const game_item_quantity_schema_1 = require("../../game/item/game-item-quantity.schema");
 const master_plan_servant_schema_1 = require("./master-plan-servant.schema");
 /**
  * Mongoose schema for the `MasterPlan.inventory` property.
