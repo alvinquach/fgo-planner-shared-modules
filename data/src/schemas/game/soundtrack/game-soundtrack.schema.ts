@@ -1,5 +1,5 @@
 import { SchemaDefinition } from 'mongoose';
-import { CommonValidators, ValidationStrings } from '../../../validators';
+import { ValidationStrings } from '../../../validators';
 import { GameItemQuantitySchema } from '../item/game-item-quantity.schema';
 
 /**
@@ -17,11 +17,13 @@ export const GameSoundtrackSchemaDefinition: SchemaDefinition = {
     },
     priority: {
         type: Number,
+        required: true,
         min: 0,
         validate: {
-            validator: CommonValidators.isNullOrInteger,
+            validator: Number.isInteger,
             message: ValidationStrings.NumberInteger
-        }
+        },
+        default: 0
     },
     name: {
         type: String

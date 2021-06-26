@@ -18,11 +18,13 @@ exports.GameSoundtrackSchemaDefinition = {
     },
     priority: {
         type: Number,
+        required: true,
         min: 0,
         validate: {
-            validator: validators_1.CommonValidators.isNullOrInteger,
+            validator: Number.isInteger,
             message: validators_1.ValidationStrings.NumberInteger
-        }
+        },
+        default: 0
     },
     name: {
         type: String

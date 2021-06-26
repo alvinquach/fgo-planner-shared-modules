@@ -5,7 +5,7 @@ export declare type GameSoundtrack = Entity<number> & {
     /**
      * The sort order of the soundtrack when displayed in a list.
      */
-    priority?: number;
+    priority: number;
     /**
      * Material required to unlock the soundtrack. This should be `undefined` for
      * tracks that are already unlocked by default.
