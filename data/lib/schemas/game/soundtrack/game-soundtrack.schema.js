@@ -43,6 +43,14 @@ exports.GameSoundtrackSchemaDefinition = {
             message: validators_1.ValidationStrings.NumberInteger
         }
     },
+    priority: {
+        type: Number,
+        min: 0,
+        validate: {
+            validator: validators_1.CommonValidators.isNullOrInteger,
+            message: validators_1.ValidationStrings.NumberInteger
+        }
+    },
     name: {
         type: String
     },

@@ -1,5 +1,5 @@
 import { Schema, SchemaDefinition } from 'mongoose';
-import { ValidationStrings } from '../../../validators';
+import { CommonValidators, ValidationStrings } from '../../../validators';
 
 /**
  * Mongoose schema for the `GameSoundtrack.material` property.
@@ -39,6 +39,14 @@ export const GameSoundtrackSchemaDefinition: SchemaDefinition = {
         min: 0,
         validate: {
             validator: Number.isInteger,
+            message: ValidationStrings.NumberInteger
+        }
+    },
+    priority: {
+        type: Number,
+        min: 0,
+        validate: {
+            validator: CommonValidators.isNullOrInteger,
             message: ValidationStrings.NumberInteger
         }
     },
