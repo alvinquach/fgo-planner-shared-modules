@@ -1,3 +1,4 @@
+import { GameItemQuantity } from '../item/game-item-quantity.type';
 /**
  * Material and QP cost for performing servant skill or ascension upgrade.
  */
@@ -9,8 +10,5 @@ export declare type GameServantEnhancement = {
     /**
      * Materials required for the upgrade.
      */
-    materials: {
-        itemId: number;
-        quantity: number;
-    }[];
+    materials: GameItemQuantity[];
 };

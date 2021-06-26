@@ -1,6 +1,7 @@
 import { Schema, SchemaDefinition } from 'mongoose';
 import { GameEventRewardSourceType } from '../../../types';
 import { CommonValidators, ValidationStrings } from '../../../validators';
+import { GameItemQuantitySchema } from '../item/game-item-quantity.schema';
 
 /**
  * Mongoose schema for the `GameEventRewardSource.materials` property.
@@ -171,35 +172,6 @@ const GameEventRewardSourceMasterItemsSchema = new Schema({
     storeSubdocValidationError: false
 });
 
-
-/**
- * Mongoose schema for the `GameEventRewardSource.enhancementItems` property.
- */
-const GameEventRewardSourceEnhancementItemsSchema = new Schema({
-    itemId: {
-        type: Number,
-        required: true,
-        min: 0,
-        validate: {
-            validator: Number.isInteger,
-            message: ValidationStrings.NumberInteger
-        }
-    },
-    quantity: {
-        type: Number,
-        required: true,
-        min: 1,
-        validate: {
-            validator: Number.isInteger,
-            message: ValidationStrings.NumberInteger
-        },
-        default: 1
-    }
-} as SchemaDefinition, {
-    _id: false,
-    storeSubdocValidationError: false
-});
-
 /**
  * Mongoose schema for the `GameEventRewardSource` type.
  */
@@ -227,7 +199,7 @@ export const GameEventRewardSourceSchema = new Schema({
         default: {}
     },
     enhancementRewards: {
-        type: [GameEventRewardSourceEnhancementItemsSchema],
+        type: [GameItemQuantitySchema],
         required: true,
         default: []
     }

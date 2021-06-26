@@ -1,7 +1,7 @@
 import { ObjectId } from 'bson';
 import { SchemaDefinition } from 'mongoose';
+import { GameItemQuantitySchema } from 'src/schemas/game/item/game-item-quantity.schema';
 import { CommonValidators, MasterAccountValidators, ValidationStrings } from '../../../validators';
-import { MasterItemSchema } from '../item/master-item.schema';
 import { MasterServantSchema } from '../servant/master-servant.schema';
 
 /**
@@ -48,7 +48,7 @@ export const MasterAccountSchemaDefinition: SchemaDefinition = {
         default: 0
     },
     items: {
-        type: [MasterItemSchema],
+        type: [GameItemQuantitySchema],
         required: true,
         default: []
     },

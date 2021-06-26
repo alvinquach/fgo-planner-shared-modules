@@ -1,6 +1,6 @@
 import { ObjectId } from 'bson';
+import { GameItemQuantity } from 'src/types/game/item/game-item-quantity.type';
 import { Entity } from '../../entity.type';
-import { MasterItem } from '../item/master-item.type';
 import { MasterServantBondLevel } from '../servant/master-servant-bond-level.type';
 import { MasterServant } from '../servant/master-servant.type';
 
@@ -19,7 +19,7 @@ export type MasterAccount = Entity<ObjectId> & {
 
     qp: number;
 
-    items: MasterItem[];
+    items: GameItemQuantity[];
 
     servants: MasterServant[];
 

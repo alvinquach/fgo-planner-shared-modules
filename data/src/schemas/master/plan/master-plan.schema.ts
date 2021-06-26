@@ -1,7 +1,7 @@
 import { ObjectId } from 'bson';
 import { Schema, SchemaDefinition } from 'mongoose';
+import { GameItemQuantitySchema } from 'src/schemas/game/item/game-item-quantity.schema';
 import { MasterAccountValidators, ValidationStrings } from '../../../validators';
-import { MasterItemSchema } from '../item/master-item.schema';
 import { MasterPlanServantSchema } from './master-plan-servant.schema';
 
 /**
@@ -9,7 +9,7 @@ import { MasterPlanServantSchema } from './master-plan-servant.schema';
  */
 const MasterPlanInventorySchema = new Schema({
     items: {
-        type: [MasterItemSchema],
+        type: [GameItemQuantitySchema],
         required: true,
         default: []
     },

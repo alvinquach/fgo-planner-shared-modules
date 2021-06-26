@@ -1,3 +1,4 @@
+import { GameItemQuantity } from '../item/game-item-quantity.type';
 import { GameEventRewardSourceType } from './game-event-reward-source-type.enum';
 export declare type GameEventRewardSource = {
     type: GameEventRewardSourceType;
@@ -21,8 +22,5 @@ export declare type GameEventRewardSource = {
         lores: number;
         rerunLores: number;
     };
-    enhancementRewards: {
-        itemId: number;
-        quantity: number;
-    }[];
+    enhancementRewards: GameItemQuantity[];
 };

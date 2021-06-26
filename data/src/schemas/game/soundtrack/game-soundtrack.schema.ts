@@ -1,33 +1,6 @@
-import { Schema, SchemaDefinition } from 'mongoose';
+import { SchemaDefinition } from 'mongoose';
 import { CommonValidators, ValidationStrings } from '../../../validators';
-
-/**
- * Mongoose schema for the `GameSoundtrack.material` property.
- */
-const GameSoundtrackMaterialSchema = new Schema({
-    itemId: {
-        type: Number,
-        required: true,
-        min: 0,
-        validate: {
-            validator: Number.isInteger,
-            message: ValidationStrings.NumberInteger
-        }
-    },
-    quantity: {
-        type: Number,
-        required: true,
-        min: 1,
-        validate: {
-            validator: Number.isInteger,
-            message: ValidationStrings.NumberInteger
-        },
-        default: 1
-    }
-} as SchemaDefinition, {
-    _id: false,
-    storeSubdocValidationError: false
-});
+import { GameItemQuantitySchema } from '../item/game-item-quantity.schema';
 
 /**
  * Mongoose schema definition for the `GameSoundtrack` type.
@@ -54,7 +27,7 @@ export const GameSoundtrackSchemaDefinition: SchemaDefinition = {
         type: String
     },
     material: {
-        type: GameSoundtrackMaterialSchema
+        type: GameItemQuantitySchema
     },
     audioUrl: {
         type: String

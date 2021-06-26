@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MasterAccountSchemaDefinition = void 0;
 const bson_1 = require("bson");
+const game_item_quantity_schema_1 = require("src/schemas/game/item/game-item-quantity.schema");
 const validators_1 = require("../../../validators");
-const master_item_schema_1 = require("../item/master-item.schema");
 const master_servant_schema_1 = require("../servant/master-servant.schema");
 /**
  * Mongoose schema definition for the `MasterAccount` type.
@@ -49,7 +49,7 @@ exports.MasterAccountSchemaDefinition = {
         default: 0
     },
     items: {
-        type: [master_item_schema_1.MasterItemSchema],
+        type: [game_item_quantity_schema_1.GameItemQuantitySchema],
         required: true,
         default: []
     },

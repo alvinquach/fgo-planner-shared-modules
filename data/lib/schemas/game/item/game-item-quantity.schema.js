@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MasterItemSchema = void 0;
+exports.GameItemQuantitySchema = void 0;
 const mongoose_1 = require("mongoose");
 const validators_1 = require("../../../validators");
 /**
- * Mongoose schema for the `MasterItem` type.
+ * Mongoose schema for the `GameItemQuantity` type.
  */
-exports.MasterItemSchema = new mongoose_1.Schema({
+exports.GameItemQuantitySchema = new mongoose_1.Schema({
     itemId: {
         type: Number,
         required: true,
@@ -19,12 +19,12 @@ exports.MasterItemSchema = new mongoose_1.Schema({
     quantity: {
         type: Number,
         required: true,
-        min: 0,
+        min: 1,
         validate: {
             validator: Number.isInteger,
             message: validators_1.ValidationStrings.NumberInteger
         },
-        default: 0
+        default: 1
     }
 }, {
     _id: false,

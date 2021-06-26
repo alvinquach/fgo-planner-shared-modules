@@ -1,6 +1,6 @@
 import { ObjectId } from 'bson';
+import { GameItemQuantity } from 'src/types/game/item/game-item-quantity.type';
 import { Entity } from '../../entity.type';
-import { MasterItem } from '../item/master-item.type';
 import { MasterPlanServant } from './master-plan-servant.type';
 
 export type MasterPlan = Entity<ObjectId> & {
@@ -21,7 +21,7 @@ export type MasterPlan = Entity<ObjectId> & {
 
     inventory: {
 
-        items: MasterItem[];
+        items: GameItemQuantity[];
     
         qp: number;
     

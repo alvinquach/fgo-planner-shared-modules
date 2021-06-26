@@ -2,9 +2,9 @@ import { Schema, SchemaDefinition } from 'mongoose';
 import { ValidationStrings } from '../../../validators';
 
 /**
- * Mongoose schema for the `MasterItem` type.
+ * Mongoose schema for the `GameItemQuantity` type.
  */
-export const MasterItemSchema = new Schema({
+export const GameItemQuantitySchema = new Schema({
     itemId: {
         type: Number,
         required: true,
@@ -17,12 +17,12 @@ export const MasterItemSchema = new Schema({
     quantity: {
         type: Number,
         required: true,
-        min: 0,
+        min: 1,
         validate: {
             validator: Number.isInteger,
             message: ValidationStrings.NumberInteger
         },
-        default: 0
+        default: 1
     }
 } as SchemaDefinition, {
     _id: false,
