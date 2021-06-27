@@ -18,6 +18,7 @@ export * from './game/servant/game-servant-rarity.type';
 export * from './game/servant/game-servant.type';
 export * from './game/soundtrack/game-soundtrack.type';
 export * from './master/account/master-account.type';
+export * from './master/item/master-item.type';
 export * from './master/plan/master-plan-servant-enhancements.type';
 export * from './master/plan/master-plan-servant.type';
 export * from './master/plan/master-plan.type';

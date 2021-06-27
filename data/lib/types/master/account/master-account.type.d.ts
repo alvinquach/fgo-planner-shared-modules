@@ -1,8 +1,8 @@
 import { ObjectId } from 'bson';
 import { Entity } from '../../entity.type';
-import { GameItemQuantity } from '../../game/item/game-item-quantity.type';
 import { MasterServantBondLevel } from '../servant/master-servant-bond-level.type';
 import { MasterServant } from '../servant/master-servant.type';
+import { MasterItem } from '../item/master-item.type';
 export declare type MasterAccount = Entity<ObjectId> & {
     userId: ObjectId;
     /**
@@ -12,7 +12,7 @@ export declare type MasterAccount = Entity<ObjectId> & {
     friendId?: string;
     exp?: number;
     qp: number;
-    items: GameItemQuantity[];
+    items: MasterItem[];
     servants: MasterServant[];
     costumes: number[];
     bondLevels: Record<number, MasterServantBondLevel>;
