@@ -79,9 +79,6 @@ exports.MasterPlanServantEnhancementsSchema = new mongoose_1.Schema({
         type: MasterPlanServantEnhancementsSkillsSchema,
         required: true,
         default: {}
-    },
-    costumes: {
-        type: [Number]
     }
 }, {
     _id: false,

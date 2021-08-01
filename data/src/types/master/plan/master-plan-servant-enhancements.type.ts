@@ -16,6 +16,5 @@ export type MasterPlanServantEnhancements = {
     'level' |
     'ascension' |
     'fouAtk' |
-    'fouHp' |
-    'costumes'
+    'fouHp'
 >>;

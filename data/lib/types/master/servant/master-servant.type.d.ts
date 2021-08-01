@@ -21,9 +21,10 @@ export declare type MasterServant = {
         2?: number;
         3?: number;
     };
-    /**
-     * @deprecated Unlocked costumes are now stored at the account level.
-     */
-    costumes?: number[];
+    appendSkills: {
+        1?: number;
+        2?: number;
+        3?: number;
+    };
     acquired?: Date;
 };

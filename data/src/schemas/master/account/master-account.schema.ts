@@ -40,7 +40,7 @@ export const MasterAccountSchemaDefinition: SchemaDefinition = {
         type: Number,
         required: true,
         min: 0,
-        max: 999999999, // TODO Define this as a constant
+        max: 2000000000, // TODO Define this as a constant
         validate: {
             validator: Number.isInteger,
             message: ValidationStrings.NumberInteger

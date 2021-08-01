@@ -37,6 +37,39 @@ const MasterServantSkillLevelsSchema = new Schema({
 });
 
 /**
+ * Mongoose schema for the `MasterServant.appendSkills` property.
+ */
+const MasterServantAppendSkillLevelsSchema = new Schema({
+    1: {
+        type: Number,
+        min: 1,
+        max: 10,
+        validate: {
+            validator: CommonValidators.isNullOrInteger,
+            message: ValidationStrings.NumberInteger
+        }
+    },
+    2: {
+        type: Number,
+        min: 1,
+        max: 10,
+        validate: {
+            validator: CommonValidators.isNullOrInteger,
+            message: ValidationStrings.NumberInteger
+        }
+    },
+    3: {
+        type: Number,
+        min: 1,
+        max: 10,
+        validate: {
+            validator: CommonValidators.isNullOrInteger,
+            message: ValidationStrings.NumberInteger
+        }
+    }
+});
+
+/**
  * Mongoose schema for the `MasterServant` type.
  */
 export const MasterServantSchema = new Schema({
@@ -73,7 +106,7 @@ export const MasterServantSchema = new Schema({
         type: Number,
         required: true,
         min: 1,
-        max: 100,
+        max: 120,
         validate: {
             validator: Number.isInteger,
             message: ValidationStrings.NumberInteger
@@ -111,6 +144,11 @@ export const MasterServantSchema = new Schema({
     },
     skills: {
         type: MasterServantSkillLevelsSchema,
+        required: true,
+        default: {}
+    },
+    appendSkills: {
+        type: MasterServantAppendSkillLevelsSchema,
         required: true,
         default: {}
     },

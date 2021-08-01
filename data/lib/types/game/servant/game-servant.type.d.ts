@@ -1,12 +1,13 @@
 import { Entity } from '../../entity.type';
 import { ExternalLink } from '../../external-link.type';
+import { GameServantAscensionMaterials } from './game-servant-ascension-materials';
 import { GameServantAttribute } from './game-servant-attribute.enum';
 import { GameServantClass } from './game-servant-class.enum';
 import { GameServantCostume } from './game-servant-costume.type';
-import { GameServantEnhancement } from './game-servant-enhancement.type';
 import { GameServantGender } from './game-servant-gender.enum';
 import { GameServantGrowthCurve } from './game-servant-growth-curve.enum';
 import { GameServantRarity } from './game-servant-rarity.type';
+import { GameServantSkillMaterials } from './game-servant-skill-materials';
 export declare type GameServant = Entity<number> & {
     collectionNo: number;
     name?: string;
@@ -36,23 +37,9 @@ export declare type GameServant = Entity<number> & {
      */
     atkMax: number;
     growthCurve: GameServantGrowthCurve;
-    skillMaterials: {
-        1: GameServantEnhancement;
-        2: GameServantEnhancement;
-        3: GameServantEnhancement;
-        4: GameServantEnhancement;
-        5: GameServantEnhancement;
-        6: GameServantEnhancement;
-        7: GameServantEnhancement;
-        8: GameServantEnhancement;
-        9: GameServantEnhancement;
-    };
-    ascensionMaterials?: {
-        1: GameServantEnhancement;
-        2: GameServantEnhancement;
-        3: GameServantEnhancement;
-        4: GameServantEnhancement;
-    };
+    skillMaterials: GameServantSkillMaterials;
+    appendSkillMaterials: GameServantSkillMaterials;
+    ascensionMaterials?: GameServantAscensionMaterials;
     costumes: Record<number, GameServantCostume>;
     metadata: {
         displayName?: string;

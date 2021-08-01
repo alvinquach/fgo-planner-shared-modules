@@ -78,9 +78,6 @@ export const MasterPlanServantEnhancementsSchema = new Schema({
         type: MasterPlanServantEnhancementsSkillsSchema,
         required: true,
         default: {}
-    },
-    costumes: {
-        type: [Number]
     }
 } as SchemaDefinition, {
     _id: false,

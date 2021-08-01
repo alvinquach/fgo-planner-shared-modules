@@ -252,6 +252,11 @@ export const GameServantSchemaDefinition: SchemaDefinition = {
         required: true,
         default: {}
     },
+    appendSkillMaterials: {
+        type: GameServantSkillMaterialsSchema,
+        required: true,
+        default: {}
+    },
     ascensionMaterials: {
         type: GameServantAscensionMaterialsSchema
     },

@@ -22,7 +22,7 @@ type GameServantModel = Model<GameServantDocument> & {
     findByClass: (cls: GameServantClass, callback?: (err: NativeError, res: GameServantDocument[]) => void) => 
         Query<GameServantDocument[], GameServantDocument>;
 
-}
+};
 
 //#region Static function implementations
 

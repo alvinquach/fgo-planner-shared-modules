@@ -5,4 +5,4 @@ export declare type MasterPlanServantEnhancements = {
         2?: number;
         3?: number;
     };
-} & Partial<Pick<MasterServant, 'level' | 'ascension' | 'fouAtk' | 'fouHp' | 'costumes'>>;
+} & Partial<Pick<MasterServant, 'level' | 'ascension' | 'fouAtk' | 'fouHp'>>;

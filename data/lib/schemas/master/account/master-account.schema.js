@@ -41,7 +41,7 @@ exports.MasterAccountSchemaDefinition = {
         type: Number,
         required: true,
         min: 0,
-        max: 999999999,
+        max: 2000000000,
         validate: {
             validator: Number.isInteger,
             message: validators_1.ValidationStrings.NumberInteger
