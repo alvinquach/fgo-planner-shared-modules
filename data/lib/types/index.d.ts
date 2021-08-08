@@ -1,4 +1,3 @@
-export * from './entity.type';
 export * from './external-link.type';
 export * from './game/event/game-event-reward-source-type.enum';
 export * from './game/event/game-event-reward-source.type';

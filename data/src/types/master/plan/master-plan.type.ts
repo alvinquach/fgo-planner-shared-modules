@@ -1,5 +1,5 @@
 import { ObjectId } from 'bson';
-import { Entity } from '../../entity.type';
+import { Entity } from '@fgo-planner/types';
 import { GameItemQuantity } from '../../game/item/game-item-quantity.type';
 import { MasterPlanServant } from './master-plan-servant.type';
 

@@ -1,4 +1,4 @@
-import { Entity } from '../../entity.type';
+import { Entity } from '@fgo-planner/types';
 import { ExternalLink } from '../../external-link.type';
 import { GameServantAscensionMaterials } from './game-servant-ascension-materials';
 import { GameServantAttribute } from './game-servant-attribute.enum';

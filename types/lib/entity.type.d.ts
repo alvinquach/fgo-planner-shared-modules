@@ -4,6 +4,6 @@
  * @param ID The data type of the ID used by the collection that contains
  * documents of this data type.
  */
-export declare type Entity<ID> = {
+export declare type Entity<ID = string> = {
     _id: ID;
 };

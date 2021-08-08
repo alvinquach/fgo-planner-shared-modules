@@ -18,6 +18,7 @@
     "homepage": "https://github.com/alvinquach/fgo-planner-shared-modules/data#readme",
     "main": "lib/index.js",
     "dependencies": {
+        "@fgo-planner/types": "file:../types",
         "mongoose": "^5.11.15"
     },
     "devDependencies": {

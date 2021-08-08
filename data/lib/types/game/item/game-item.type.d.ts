@@ -1,6 +1,4 @@
-import { Entity } from '../../entity.type';
-import { GameItemBackground } from './game-item-background.enum';
-import { GameItemUsage } from './game-item-usage.enum';
+import { GameItem as BaseGameItem } from '@fgo-planner/types';
 /**
  * An inventory item.
  *
@@ -9,9 +7,4 @@ import { GameItemUsage } from './game-item-usage.enum';
  * - Event items and currencies
  * - Other consumable items
  */
-export declare type GameItem = Entity<number> & {
-    name: string;
-    description?: string;
-    background: GameItemBackground;
-    uses: GameItemUsage[];
-};
+export declare type GameItem = BaseGameItem;

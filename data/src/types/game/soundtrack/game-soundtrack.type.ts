@@ -1,5 +1,5 @@
 import { GameItemQuantity } from '../item/game-item-quantity.type';
-import { Entity } from '../../entity.type';
+import { Entity } from '@fgo-planner/types';
 
 export type GameSoundtrack = Entity<number> & {
 

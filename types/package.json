@@ -1,0 +1,27 @@
+{
+    "name": "@fgo-planner/types",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "npm run build-ts && npm run lint",
+        "build-ts": "tsc --strict",
+        "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/alvinquach/fgo-planner-shared-modules.git"
+    },
+    "author": "Alvin Quach",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/alvinquach/fgo-planner-shared-modules/issues"
+    },
+    "homepage": "https://github.com/alvinquach/fgo-planner-shared-modules/data#readme",
+    "main": "lib/index.js",
+    "dependencies": {},
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^4.18.0",
+        "@typescript-eslint/parser": "^4.18.0",
+        "eslint": "^7.22.0",
+        "typescript": "^4.2.3"
+    }
+}

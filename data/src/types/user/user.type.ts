@@ -1,5 +1,5 @@
 import { ObjectId } from 'bson';
-import { Entity } from '../entity.type';
+import { Entity } from '@fgo-planner/types';
 import { UserPreferences } from './user-preferences.type';
 
 export type User = Entity<ObjectId> & {

@@ -1,5 +1,5 @@
 import { ObjectId } from 'bson';
-import { Entity } from '../../entity.type';
+import { Entity } from '@fgo-planner/types';
 import { MasterServantBondLevel } from '../servant/master-servant-bond-level.type';
 import { MasterServant } from '../servant/master-servant.type';
 import { MasterItem } from '../item/master-item.type';
