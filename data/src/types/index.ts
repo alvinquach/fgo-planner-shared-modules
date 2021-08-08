@@ -27,6 +27,7 @@ export {
     MasterServantAscensionLevel,
     MasterServantBondLevel,
     MasterServantNoblePhantasmLevel,
+    MasterServantSkillLevel,
     UserPreferences
 } from '@fgo-planner/types';
 
