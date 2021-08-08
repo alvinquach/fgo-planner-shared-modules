@@ -1,5 +1,3 @@
-import { MasterServant } from '../../types';
-
 export class MasterAccountValidators {
 
     /**
