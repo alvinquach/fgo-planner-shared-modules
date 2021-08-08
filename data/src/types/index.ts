@@ -12,6 +12,7 @@ export {
     GameServantAttribute,
     GameServantCardType,
     GameServantClass,
+    GameServantCostume,
     GameServantDeck,
     GameServantEnhancement,
     GameServantGender,

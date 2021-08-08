@@ -11,6 +11,7 @@ export * from './game/servant/game-servant-ascension-materials';
 export * from './game/servant/game-servant-attribute.enum';
 export * from './game/servant/game-servant-card-type.enum';
 export * from './game/servant/game-servant-class.enum';
+export * from './game/servant/game-servant-costume.type';
 export * from './game/servant/game-servant-deck.enum';
 export * from './game/servant/game-servant-enhancement.type';
 export * from './game/servant/game-servant-gender.enum';

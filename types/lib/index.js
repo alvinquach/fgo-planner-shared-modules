@@ -23,6 +23,7 @@ __exportStar(require("./game/servant/game-servant-ascension-materials"), exports
 __exportStar(require("./game/servant/game-servant-attribute.enum"), exports);
 __exportStar(require("./game/servant/game-servant-card-type.enum"), exports);
 __exportStar(require("./game/servant/game-servant-class.enum"), exports);
+__exportStar(require("./game/servant/game-servant-costume.type"), exports);
 __exportStar(require("./game/servant/game-servant-deck.enum"), exports);
 __exportStar(require("./game/servant/game-servant-enhancement.type"), exports);
 __exportStar(require("./game/servant/game-servant-gender.enum"), exports);
