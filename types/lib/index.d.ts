@@ -31,4 +31,6 @@ export * from './master/servant/master-servant-noble-phantasm-level.type';
 export * from './master/servant/master-servant-skill-level.type';
 export * from './master/servant/master-servant.type';
 export * from './user/user-preferences.type';
+export * from './user/user-web-client-preferences.type';
+export * from './user/user-web-client-theme.type';
 export * from './user/user.type';

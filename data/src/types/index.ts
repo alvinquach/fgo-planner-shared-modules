@@ -28,7 +28,9 @@ export {
     MasterServantBondLevel,
     MasterServantNoblePhantasmLevel,
     MasterServantSkillLevel,
-    UserPreferences
+    UserPreferences,
+    UserWebClientPreferences,
+    UserWebClientTheme
 } from '@fgo-planner/types';
 
 export * from './game-event.type';

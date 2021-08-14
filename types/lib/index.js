@@ -43,4 +43,7 @@ __exportStar(require("./master/servant/master-servant-noble-phantasm-level.type"
 __exportStar(require("./master/servant/master-servant-skill-level.type"), exports);
 __exportStar(require("./master/servant/master-servant.type"), exports);
 __exportStar(require("./user/user-preferences.type"), exports);
+__exportStar(require("./user/user-web-client-preferences.type"), exports);
+__exportStar(require("./user/user-web-client-theme.type"), exports);
+// export * from './user/user-global-preferences.type';
 __exportStar(require("./user/user.type"), exports);
