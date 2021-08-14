@@ -28,6 +28,8 @@ export {
     MasterServantBondLevel,
     MasterServantNoblePhantasmLevel,
     MasterServantSkillLevel,
+    RgbaColor,
+    RgbColor,
     UserPreferences,
     UserWebClientPreferences,
     UserWebClientTheme
@@ -37,3 +39,5 @@ export * from './game-event.type';
 export * from './master-account.type';
 export * from './master-plan.type';
 export * from './user.type';
+
+
