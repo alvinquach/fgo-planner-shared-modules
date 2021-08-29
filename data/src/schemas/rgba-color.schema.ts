@@ -1,5 +1,5 @@
 import { Schema, SchemaDefinition, SchemaDefinitionProperty } from 'mongoose';
-import { ValidationStrings } from 'src/validators';
+import { ValidationStrings } from '../validators';
 
 const isValidRgbValue = function(value: number): boolean {
     return value != null && Number.isInteger(value) && value >= 0 && value <= 255;

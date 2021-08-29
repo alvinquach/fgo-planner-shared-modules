@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RgbaColorSchema = void 0;
 const mongoose_1 = require("mongoose");
-const validators_1 = require("src/validators");
+const validators_1 = require("../validators");
 const isValidRgbValue = function (value) {
     return value != null && Number.isInteger(value) && value >= 0 && value <= 255;
 };
