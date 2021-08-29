@@ -1,7 +1,11 @@
-import { RgbColor } from './rgb-color.type';
+export type RgbaColor = {
 
-export type RgbaColor = RgbColor & {
+    r: number;
 
+    g: number;
+
+    b: number;
+    
     a: number;
 
 };

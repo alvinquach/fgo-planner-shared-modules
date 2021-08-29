@@ -1,4 +1,6 @@
-import { RgbColor } from './rgb-color.type';
-export declare type RgbaColor = RgbColor & {
+export declare type RgbaColor = {
+    r: number;
+    g: number;
+    b: number;
     a: number;
 };

@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserPreferencesSchema = void 0;
 const mongoose_1 = require("mongoose");
-const rgb_color_schema_1 = require("../rgb-color.schema");
 const rgba_color_schema_1 = require("../rgba-color.schema");
 /**
  * Mongoose schema for the `UserWebClientTheme` type.
@@ -21,11 +20,11 @@ const UserWebClientThemeSchema = new mongoose_1.Schema({
         required: true
     },
     primaryColor: {
-        type: rgb_color_schema_1.RgbColorSchema,
+        type: rgba_color_schema_1.RgbaColorSchema,
         required: true
     },
     secondaryColor: {
-        type: rgb_color_schema_1.RgbColorSchema,
+        type: rgba_color_schema_1.RgbaColorSchema,
         required: true
     },
     dividerColor: {

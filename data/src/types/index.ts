@@ -29,7 +29,6 @@ export {
     MasterServantNoblePhantasmLevel,
     MasterServantSkillLevel,
     RgbaColor,
-    RgbColor,
     UserPreferences,
     UserWebClientPreferences,
     UserWebClientTheme

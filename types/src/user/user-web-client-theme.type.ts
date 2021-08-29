@@ -1,4 +1,3 @@
-import { RgbColor } from '../rgb-color.type';
 import { RgbaColor } from '../rgba-color.type';
 
 export type UserWebClientTheme = {
@@ -9,9 +8,9 @@ export type UserWebClientTheme = {
 
     foregroundColor: RgbaColor;
 
-    primaryColor: RgbColor;
+    primaryColor: RgbaColor;
 
-    secondaryColor: RgbColor;
+    secondaryColor: RgbaColor;
 
     dividerColor: RgbaColor;
 

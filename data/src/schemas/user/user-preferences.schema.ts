@@ -1,5 +1,4 @@
 import { Schema, SchemaDefinition } from 'mongoose';
-import { RgbColorSchema } from '../rgb-color.schema';
 import { RgbaColorSchema } from '../rgba-color.schema';
 
 /**
@@ -19,11 +18,11 @@ const UserWebClientThemeSchema = new Schema({
         required: true
     },
     primaryColor: {
-        type: RgbColorSchema,
+        type: RgbaColorSchema,
         required: true
     },
     secondaryColor: {
-        type: RgbColorSchema,
+        type: RgbaColorSchema,
         required: true
     },
     dividerColor: {
