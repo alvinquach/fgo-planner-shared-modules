@@ -25,6 +25,7 @@ const schemas_1 = require("../../schemas");
 //#region Static function implementations
 const findByAccountId = function (accountId, callback) {
     const projection = {
+        groupId: 1,
         name: 1,
         description: 1,
         targetDate: 1,

@@ -1,5 +1,5 @@
 import { ObjectId } from 'bson';
-import mongoose, { Document, Model, NativeError, Query, Schema, UpdateQuery } from 'mongoose';
+import mongoose, { Document, Model, NativeError, Query, Schema } from 'mongoose';
 import { PlanSchemaDefinition } from '../../schemas';
 import { Plan } from '../../types';
 
@@ -14,13 +14,13 @@ type PlanModel = Model<PlanDocument> & {
      * Finds the plans associated with the given `accountId`. Returns a simplified
      * version of the plan data.
      */
-    findByAccountId: (accountId: ObjectId, callback?: (err: NativeError, res: Partial<PlanDocument>[]) => void) =>
-        Query<Partial<PlanDocument>[], PlanDocument>;
+    findByAccountId: (accountId: ObjectId, callback?: (err: NativeError, res: Array<Partial<PlanDocument>>) => void) =>
+        Query<Array<Partial<PlanDocument>>, PlanDocument>;
 
     /**
      * Removes all plans from a group with the given `groupId`.
      */
-    removeFromGroup: (groupId: ObjectId, callback?: (err: NativeError, res: Partial<PlanDocument>[]) => void) =>
+    removeFromGroup: (groupId: ObjectId, callback?: (err: NativeError, res: any) => void) =>
         Query<any, PlanDocument>;
 
 
@@ -31,9 +31,10 @@ type PlanModel = Model<PlanDocument> & {
 const findByAccountId = function (
     this: PlanModel,
     accountId: ObjectId,
-    callback?: (err: NativeError, res: Partial<PlanDocument>[]) => void
+    callback?: (err: NativeError, res: Array<Partial<PlanDocument>>) => void
 ) {
     const projection = {
+        groupId: 1,
         name: 1,
         description: 1,
         targetDate: 1,
@@ -46,7 +47,7 @@ const findByAccountId = function (
 const removeFromGroup = function (
     this: PlanModel,
     groupId: ObjectId,
-    callback?: (err: NativeError, res: Partial<PlanDocument>[]) => void
+    callback?: (err: NativeError, res: any) => void
 ) {
     return this.updateMany({ groupId }, { $unset: { groupId: 1 } }, {}, callback);
 };
