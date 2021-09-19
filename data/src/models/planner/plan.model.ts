@@ -1,5 +1,5 @@
 import { ObjectId } from 'bson';
-import mongoose, { Document, Model, NativeError, Query, Schema } from 'mongoose';
+import mongoose, { Document, Model, NativeError, Query, Schema, UpdateQuery } from 'mongoose';
 import { PlanSchemaDefinition } from '../../schemas';
 import { Plan } from '../../types';
 
@@ -11,11 +11,18 @@ export type PlanDocument = Document & Plan;
 type PlanModel = Model<PlanDocument> & {
 
     /**
-     * Finds the master plans associated with the given `accountId`. Returns a
-     * simplified version of the master plan data.
+     * Finds the plans associated with the given `accountId`. Returns a simplified
+     * version of the plan data.
      */
     findByAccountId: (accountId: ObjectId, callback?: (err: NativeError, res: Partial<PlanDocument>[]) => void) =>
         Query<Partial<PlanDocument>[], PlanDocument>;
+
+    /**
+     * Removes all plans from a group with the given `groupId`.
+     */
+    removeFromGroup: (groupId: ObjectId, callback?: (err: NativeError, res: Partial<PlanDocument>[]) => void) =>
+        Query<any, PlanDocument>;
+
 
 };
 
@@ -36,13 +43,22 @@ const findByAccountId = function (
     return this.find({ accountId }, projection, {}, callback);
 };
 
+const removeFromGroup = function (
+    this: PlanModel,
+    groupId: ObjectId,
+    callback?: (err: NativeError, res: Partial<PlanDocument>[]) => void
+) {
+    return this.updateMany({ groupId }, { $unset: { groupId: 1 } }, {}, callback);
+};
+
 //#endregion
 
 /**
  * Properties and functions that can be assigned as statics on the schema.
  */
 const Statics = {
-    findByAccountId
+    findByAccountId,
+    removeFromGroup
 };
 
 /**

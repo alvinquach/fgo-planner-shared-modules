@@ -19,39 +19,32 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PlanModel = void 0;
+exports.PlanGroupModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const schemas_1 = require("../../schemas");
 //#region Static function implementations
 const findByAccountId = function (accountId, callback) {
     const projection = {
         name: 1,
-        description: 1,
-        targetDate: 1,
-        autoUpdate: 1,
-        shared: 1
+        description: 1
     };
     return this.find({ accountId }, projection, {}, callback);
-};
-const removeFromGroup = function (groupId, callback) {
-    return this.updateMany({ groupId }, { $unset: { groupId: 1 } }, {}, callback);
 };
 //#endregion
 /**
  * Properties and functions that can be assigned as statics on the schema.
  */
 const Statics = {
-    findByAccountId,
-    removeFromGroup
+    findByAccountId
 };
 /**
- * Mongoose schema for the `Plan` type.
+ * Mongoose schema for the `PlanGroup` type.
  */
-const PlanSchema = new mongoose_1.Schema(schemas_1.PlanSchemaDefinition, { timestamps: true });
+const PlanGroupSchema = new mongoose_1.Schema(schemas_1.PlanGroupSchemaDefinition, { timestamps: true });
 // Add the static properties to the schema.
-Object.assign(PlanSchema.statics, Statics);
-PlanSchema.set('toJSON', {
+Object.assign(PlanGroupSchema.statics, Statics);
+PlanGroupSchema.set('toJSON', {
     // virtuals: true,
     versionKey: false,
 });
-exports.PlanModel = mongoose_1.default.model('Plan', PlanSchema, 'Plans');
+exports.PlanGroupModel = mongoose_1.default.model('PlanGroup', PlanGroupSchema, 'PlanGroups');

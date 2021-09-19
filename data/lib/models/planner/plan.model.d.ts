@@ -7,10 +7,14 @@ export declare type PlanDocument = Document & Plan;
  */
 declare type PlanModel = Model<PlanDocument> & {
     /**
-     * Finds the master plans associated with the given `accountId`. Returns a
-     * simplified version of the master plan data.
+     * Finds the plans associated with the given `accountId`. Returns a simplified
+     * version of the plan data.
      */
     findByAccountId: (accountId: ObjectId, callback?: (err: NativeError, res: Partial<PlanDocument>[]) => void) => Query<Partial<PlanDocument>[], PlanDocument>;
+    /**
+     * Removes all plans from a group with the given `groupId`.
+     */
+    removeFromGroup: (groupId: ObjectId, callback?: (err: NativeError, res: Partial<PlanDocument>[]) => void) => Query<any, PlanDocument>;
 };
 export declare const PlanModel: PlanModel;
 export {};

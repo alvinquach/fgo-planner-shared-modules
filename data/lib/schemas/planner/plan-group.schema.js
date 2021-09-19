@@ -1,12 +1,13 @@
-import { ObjectId } from 'bson';
-import { SchemaDefinition } from 'mongoose';
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PlanGroupSchemaDefinition = void 0;
+const bson_1 = require("bson");
 /**
  * Mongoose schema definition for the `PlanGroup` type.
  */
-export const PlanGroupSchemaDefinition: SchemaDefinition = {
+exports.PlanGroupSchemaDefinition = {
     accountId: {
-        type: ObjectId,
+        type: bson_1.ObjectId,
         required: true,
         index: true
     },

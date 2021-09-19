@@ -16,6 +16,7 @@ __exportStar(require("./game/item/game-item.schema"), exports);
 __exportStar(require("./game/servant/game-servant.schema"), exports);
 __exportStar(require("./game/soundtrack/game-soundtrack.schema"), exports);
 __exportStar(require("./master/account/master-account.schema"), exports);
-__exportStar(require("./planner/plan.schema"), exports);
 __exportStar(require("./master/servant/master-servant.schema"), exports);
+__exportStar(require("./planner/plan-group.schema"), exports);
+__exportStar(require("./planner/plan.schema"), exports);
 __exportStar(require("./user/user.schema"), exports);
