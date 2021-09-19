@@ -10,7 +10,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GameServantGrowthCurve = exports.GameServantGender = exports.GameServantDeck = exports.GameServantClass = exports.GameServantCardType = exports.GameServantAttribute = exports.GameItemUsage = exports.GameItemBackground = exports.GameEventRewardSourceType = void 0;
+exports.PlanServantType = exports.GameServantGrowthCurve = exports.GameServantGender = exports.GameServantDeck = exports.GameServantClass = exports.GameServantCardType = exports.GameServantAttribute = exports.GameItemUsage = exports.GameItemBackground = exports.GameEventRewardSourceType = void 0;
 var types_1 = require("@fgo-planner/types");
 Object.defineProperty(exports, "GameEventRewardSourceType", { enumerable: true, get: function () { return types_1.GameEventRewardSourceType; } });
 Object.defineProperty(exports, "GameItemBackground", { enumerable: true, get: function () { return types_1.GameItemBackground; } });
@@ -21,7 +21,9 @@ Object.defineProperty(exports, "GameServantClass", { enumerable: true, get: func
 Object.defineProperty(exports, "GameServantDeck", { enumerable: true, get: function () { return types_1.GameServantDeck; } });
 Object.defineProperty(exports, "GameServantGender", { enumerable: true, get: function () { return types_1.GameServantGender; } });
 Object.defineProperty(exports, "GameServantGrowthCurve", { enumerable: true, get: function () { return types_1.GameServantGrowthCurve; } });
+Object.defineProperty(exports, "PlanServantType", { enumerable: true, get: function () { return types_1.PlanServantType; } });
 __exportStar(require("./game-event.type"), exports);
 __exportStar(require("./master-account.type"), exports);
-__exportStar(require("./master-plan.type"), exports);
+__exportStar(require("./plan-group.type"), exports);
+__exportStar(require("./plan.type"), exports);
 __exportStar(require("./user.type"), exports);

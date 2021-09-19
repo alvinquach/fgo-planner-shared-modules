@@ -1,10 +1,10 @@
 import { Schema, SchemaDefinition } from 'mongoose';
-import { CommonValidators, MasterAccountValidators, ValidationStrings } from '../../../validators';
+import { CommonValidators, MasterAccountValidators, ValidationStrings } from '../../validators';
 
 /**
- * Mongoose schema for the `MasterPlanServantEnhancements.skills` property.
+ * Mongoose schema for the `PlanServantEnhancements.skills` property.
  */
-const MasterPlanServantEnhancementsSkillsSchema = new Schema({
+const PlanServantEnhancementsSkillsSchema = new Schema({
     1: {
         type: Number,
         min: 1,
@@ -35,9 +35,9 @@ const MasterPlanServantEnhancementsSkillsSchema = new Schema({
 });
 
 /**
- * Mongoose schema for the `MasterPlanServantEnhancements` type.
+ * Mongoose schema for the `PlanServantEnhancements` type.
  */
-export const MasterPlanServantEnhancementsSchema = new Schema({
+export const PlanServantEnhancementsSchema = new Schema({
     level: {
         type: Number,
         min: 1,
@@ -52,7 +52,7 @@ export const MasterPlanServantEnhancementsSchema = new Schema({
         min: 0,
         max: 4,
         validate: {
-            validator: Number.isInteger,
+            validator: CommonValidators.isNullOrInteger,
             message: ValidationStrings.NumberInteger
         }
     },
@@ -75,7 +75,7 @@ export const MasterPlanServantEnhancementsSchema = new Schema({
         }
     },
     skills: {
-        type: MasterPlanServantEnhancementsSkillsSchema,
+        type: PlanServantEnhancementsSkillsSchema,
         required: true,
         default: {}
     }

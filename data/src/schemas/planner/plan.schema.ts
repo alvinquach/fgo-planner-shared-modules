@@ -1,13 +1,13 @@
 import { ObjectId } from 'bson';
 import { Schema, SchemaDefinition } from 'mongoose';
-import { MasterAccountValidators, ValidationStrings } from '../../../validators';
-import { GameItemQuantitySchema } from '../../game/item/game-item-quantity.schema';
-import { MasterPlanServantSchema } from './master-plan-servant.schema';
+import { MasterAccountValidators, ValidationStrings } from '../../validators';
+import { GameItemQuantitySchema } from '../game/item/game-item-quantity.schema';
+import { PlanServantSchema } from './plan-servant.schema';
 
 /**
- * Mongoose schema for the `MasterPlan.inventory` property.
+ * Mongoose schema for the `Plan.inventory` property.
  */
-const MasterPlanInventorySchema = new Schema({
+const PlanInventorySchema = new Schema({
     items: {
         type: [GameItemQuantitySchema],
         required: true,
@@ -24,18 +24,22 @@ const MasterPlanInventorySchema = new Schema({
 });
 
 /**
- * Mongoose schema definition for the `MasterPlan` type.
+ * Mongoose schema definition for the `Plan` type.
  */
-export const MasterPlanSchemaDefinition: SchemaDefinition = {
+export const PlanSchemaDefinition: SchemaDefinition = {
     accountId: {
         type: ObjectId,
         required: true,
         index: true
     },
+    groupId: {
+        type: ObjectId,
+        sparse: true
+    },
     name: {
         type: String,
         trim: true,
-        maxlength: 31
+        maxlength: 63
     },
     description: {
         type: String
@@ -56,7 +60,7 @@ export const MasterPlanSchemaDefinition: SchemaDefinition = {
         default: false
     },
     servants: {
-        type: [MasterPlanServantSchema],
+        type: [PlanServantSchema],
         required: true,
         validate: {
             validator: MasterAccountValidators.servantInstanceIdsUnique,
@@ -65,7 +69,7 @@ export const MasterPlanSchemaDefinition: SchemaDefinition = {
         default: []
     },
     inventory: {
-        type: MasterPlanInventorySchema,
+        type: PlanInventorySchema,
         required: true,
         default: {}
     }

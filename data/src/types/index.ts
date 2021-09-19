@@ -20,14 +20,16 @@ export {
     GameServantRarity,
     GameServantSkillMaterials,
     GameSoundtrack,
-    MasterItem,
-    MasterPlanServant,
-    MasterPlanServantEnhancements,
-    MasterServant,
+    MasterItem, MasterServant,
     MasterServantAscensionLevel,
     MasterServantBondLevel,
     MasterServantNoblePhantasmLevel,
     MasterServantSkillLevel,
+    PlanServant,
+    PlanServantEnhancements,
+    PlanServantOwned,
+    PlanServantTemporary,
+    PlanServantType,
     RgbaColor,
     UserPreferences,
     UserWebClientPreferences,
@@ -36,7 +38,6 @@ export {
 
 export * from './game-event.type';
 export * from './master-account.type';
-export * from './master-plan.type';
+export * from './plan-group.type';
+export * from './plan.type';
 export * from './user.type';
-
-
