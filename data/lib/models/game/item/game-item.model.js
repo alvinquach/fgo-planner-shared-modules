@@ -23,11 +23,11 @@ exports.GameItemModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const schemas_1 = require("../../../schemas");
 //#region Static function implementations
-const findByUsage = function (usage, callback) {
+const findByUsage = function (usage) {
     if (!Array.isArray(usage)) {
         usage = [usage];
     }
-    return this.findOne({ uses: { $in: usage } }, callback);
+    return this.find({ uses: { $in: usage } });
 };
 //#endregion
 /**

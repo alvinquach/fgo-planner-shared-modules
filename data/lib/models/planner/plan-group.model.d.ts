@@ -1,5 +1,5 @@
 import { ObjectId } from 'bson';
-import { Document, Model, NativeError, Query } from 'mongoose';
+import { Document, Model, Query } from 'mongoose';
 import { PlanGroup } from '../../types';
 export declare type PlanGroupDocument = Document & PlanGroup;
 /**
@@ -7,10 +7,10 @@ export declare type PlanGroupDocument = Document & PlanGroup;
  */
 declare type PlanGroupModel = Model<PlanGroupDocument> & {
     /**
-     * Finds the plan groups associated with the given `accountId`. Returns a
-     * simplified version of the plan group data.
+     * Creates a query for retrieving the plan groups associated with the given
+     * `accountId`. Result will contain simplified version of the plan group data.
      */
-    findByAccountId: (accountId: ObjectId, callback?: (err: NativeError, res: Partial<PlanGroupDocument>[]) => void) => Query<Partial<PlanGroupDocument>[], PlanGroupDocument>;
+    findByAccountId: (accountId: ObjectId) => Query<Array<Partial<PlanGroupDocument>>, PlanGroupDocument>;
 };
 export declare const PlanGroupModel: PlanGroupModel;
 export {};

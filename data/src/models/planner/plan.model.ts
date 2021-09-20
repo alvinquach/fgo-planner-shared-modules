@@ -1,5 +1,5 @@
 import { ObjectId } from 'bson';
-import mongoose, { Document, Model, NativeError, Query, Schema } from 'mongoose';
+import mongoose, { Document, Model, Query, Schema, UpdateWriteOpResult } from 'mongoose';
 import { PlanSchemaDefinition } from '../../schemas';
 import { Plan } from '../../types';
 
@@ -11,18 +11,15 @@ export type PlanDocument = Document & Plan;
 type PlanModel = Model<PlanDocument> & {
 
     /**
-     * Finds the plans associated with the given `accountId`. Returns a simplified
-     * version of the plan data.
+     * Creates a query for retrieving the plans associated with the given
+     * `accountId`. Result will contain simplified version of the plan data.
      */
-    findByAccountId: (accountId: ObjectId, callback?: (err: NativeError, res: Array<Partial<PlanDocument>>) => void) =>
-        Query<Array<Partial<PlanDocument>>, PlanDocument>;
+    findByAccountId: (accountId: ObjectId) => Query<Array<Partial<PlanDocument>>, PlanDocument>;
 
     /**
-     * Removes all plans from a group with the given `groupId`.
+     * Creates a query that removes all plans from a group with the given `groupId`.
      */
-    removeFromGroup: (groupId: ObjectId, callback?: (err: NativeError, res: any) => void) =>
-        Query<any, PlanDocument>;
-
+    removeFromGroup: (groupId: ObjectId) => Query<UpdateWriteOpResult, PlanDocument>;
 
 };
 
@@ -30,9 +27,8 @@ type PlanModel = Model<PlanDocument> & {
 
 const findByAccountId = function (
     this: PlanModel,
-    accountId: ObjectId,
-    callback?: (err: NativeError, res: Array<Partial<PlanDocument>>) => void
-) {
+    accountId: ObjectId
+): Query<Array<Partial<PlanDocument>>, PlanDocument> {
     const projection = {
         groupId: 1,
         name: 1,
@@ -41,15 +37,14 @@ const findByAccountId = function (
         autoUpdate: 1,
         shared: 1
     };
-    return this.find({ accountId }, projection, {}, callback);
+    return this.find({ accountId }, projection);
 };
 
 const removeFromGroup = function (
     this: PlanModel,
-    groupId: ObjectId,
-    callback?: (err: NativeError, res: any) => void
-) {
-    return this.updateMany({ groupId }, { $unset: { groupId: 1 } }, {}, callback);
+    groupId: ObjectId
+): Query<UpdateWriteOpResult, PlanDocument> {
+    return this.updateMany({ groupId }, { $unset: { groupId: 1 } });
 };
 
 //#endregion

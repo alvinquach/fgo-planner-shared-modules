@@ -1,4 +1,4 @@
-import { Document, Model, NativeError, Query } from 'mongoose';
+import { Document, Model, Query } from 'mongoose';
 import { GameServant, GameServantClass } from '../../../types';
 export declare type GameServantDocument = Document & GameServant;
 /**
@@ -6,14 +6,14 @@ export declare type GameServantDocument = Document & GameServant;
  */
 declare type GameServantModel = Model<GameServantDocument> & {
     /**
-     * Creates a Query to find a single document by its `collectionNo` field.
+     * Creates a query to find a single document by its `collectionNo` field.
      */
-    findByCollectionNo: (collectionNo: number, callback?: (err: NativeError, res: GameServantDocument) => void) => Query<GameServantDocument, GameServantDocument>;
+    findByCollectionNo: (collectionNo: number) => Query<GameServantDocument, GameServantDocument>;
     /**
-     * Creates a Query for retrieving all the documents with the given `class` in
+     * Creates a query for retrieving all the documents with the given `class` in
      * the collection.
      */
-    findByClass: (cls: GameServantClass, callback?: (err: NativeError, res: GameServantDocument[]) => void) => Query<GameServantDocument[], GameServantDocument>;
+    findByClass: (cls: GameServantClass) => Query<GameServantDocument[], GameServantDocument>;
 };
 export declare const GameServantModel: GameServantModel;
 export {};

@@ -1,5 +1,5 @@
 import { ObjectId } from 'bson';
-import mongoose, { Document, Model, NativeError, Query, Schema } from 'mongoose';
+import mongoose, { Document, Model, Query, Schema } from 'mongoose';
 import { PlanGroupSchemaDefinition } from '../../schemas';
 import { PlanGroup } from '../../types';
 
@@ -11,11 +11,10 @@ export type PlanGroupDocument = Document & PlanGroup;
 type PlanGroupModel = Model<PlanGroupDocument> & {
 
     /**
-     * Finds the plan groups associated with the given `accountId`. Returns a
-     * simplified version of the plan group data.
+     * Creates a query for retrieving the plan groups associated with the given
+     * `accountId`. Result will contain simplified version of the plan group data.
      */
-    findByAccountId: (accountId: ObjectId, callback?: (err: NativeError, res: Partial<PlanGroupDocument>[]) => void) =>
-        Query<Partial<PlanGroupDocument>[], PlanGroupDocument>;
+    findByAccountId: (accountId: ObjectId) => Query<Array<Partial<PlanGroupDocument>>, PlanGroupDocument>;
 
 };
 
@@ -23,14 +22,13 @@ type PlanGroupModel = Model<PlanGroupDocument> & {
 
 const findByAccountId = function (
     this: PlanGroupModel,
-    accountId: ObjectId,
-    callback?: (err: NativeError, res: Partial<PlanGroupDocument>[]) => void
-) {
+    accountId: ObjectId
+): Query<Array<Partial<PlanGroupDocument>>, PlanGroupDocument> {
     const projection = {
         name: 1,
         description: 1
     };
-    return this.find({ accountId }, projection, {}, callback);
+    return this.find({ accountId }, projection);
 };
 
 //#endregion

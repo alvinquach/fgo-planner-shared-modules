@@ -1,4 +1,4 @@
-import mongoose, { Document, Model, NativeError, Query, Schema } from 'mongoose';
+import mongoose, { Document, Model, Query, Schema } from 'mongoose';
 import { GameEventSchemaDefinition } from '../../../schemas';
 import { GameEvent } from '../../../types';
 
@@ -10,10 +10,9 @@ export type GameEventDocument = Document & GameEvent;
 type GameEventModel = Model<GameEventDocument> & {
 
     /**
-     * Creates a Query for retrieving the events that start in the given year.
+     * Creates a query for retrieving the events that start in the given year.
      */
-    findByYear: (year: number, callback?: (err: NativeError, res: GameEventDocument[]) => void) =>
-        Query<GameEventDocument[], GameEventDocument>;
+    findByYear: (year: number) => Query<GameEventDocument[], GameEventDocument>;
 
 };
 
@@ -21,16 +20,15 @@ type GameEventModel = Model<GameEventDocument> & {
 
 const findByYear = function (
     this: GameEventModel,
-    year: number,
-    callback?: (err: NativeError, res: GameEventDocument[]) => void
-) {
+    year: number
+): Query<GameEventDocument[], GameEventDocument> {
     const startDate = new Date(year, 0);
     const endDate = new Date(year + 1, 0);
     const dateQuery = {
         $gte: startDate,
         $lt: endDate
     };
-    return this.findOne({ startDate: dateQuery }, callback);
+    return this.find({ startDate: dateQuery });
 };
 
 //#endregion

@@ -1,4 +1,4 @@
-import { Document, Model, NativeError, Query } from 'mongoose';
+import { Document, Model, Query } from 'mongoose';
 import { GameEvent } from '../../../types';
 export declare type GameEventDocument = Document & GameEvent;
 /**
@@ -6,9 +6,9 @@ export declare type GameEventDocument = Document & GameEvent;
  */
 declare type GameEventModel = Model<GameEventDocument> & {
     /**
-     * Creates a Query for retrieving the events that start in the given year.
+     * Creates a query for retrieving the events that start in the given year.
      */
-    findByYear: (year: number, callback?: (err: NativeError, res: GameEventDocument[]) => void) => Query<GameEventDocument[], GameEventDocument>;
+    findByYear: (year: number) => Query<GameEventDocument[], GameEventDocument>;
 };
 export declare const GameEventModel: GameEventModel;
 export {};

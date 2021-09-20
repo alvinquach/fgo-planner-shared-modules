@@ -24,12 +24,12 @@ const mongoose_1 = __importStar(require("mongoose"));
 const schemas_1 = require("../../schemas");
 const validators_1 = require("../../validators");
 //#region Static function implementations
-const findByUserId = function (userId, callback) {
+const findByUserId = function (userId) {
     const projection = {
         name: 1,
         friendId: 1
     };
-    return this.find({ userId }, projection, {}, callback);
+    return this.find({ userId }, projection, {});
 };
 //#endregion
 /**

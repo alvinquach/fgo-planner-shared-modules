@@ -23,11 +23,11 @@ exports.GameServantModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const schemas_1 = require("../../../schemas");
 //#region Static function implementations
-const findByCollectionNo = function (collectionNo, callback) {
-    return this.findOne({ collectionNo }, callback);
+const findByCollectionNo = function (collectionNo) {
+    return this.findOne({ collectionNo });
 };
-const findByClass = function (cls, callback) {
-    return this.find({ class: cls }, callback);
+const findByClass = function (cls) {
+    return this.find({ class: cls });
 };
 //#endregion
 /**

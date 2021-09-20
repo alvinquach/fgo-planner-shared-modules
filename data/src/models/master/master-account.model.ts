@@ -1,5 +1,5 @@
 import { ObjectId } from 'bson';
-import mongoose, { Document, Model, NativeError, Query, Schema } from 'mongoose';
+import mongoose, { Document, Model, Query, Schema } from 'mongoose';
 import { MasterAccountSchemaDefinition } from '../../schemas';
 import { MasterAccount } from '../../types';
 import { MasterAccountValidators } from '../../validators';
@@ -19,11 +19,10 @@ type MasterAccountModel = Model<MasterAccountDocument> & {
     isFriendIdFormatValid: (id: string) => boolean;
 
     /**
-     * Finds the master accounts associated with the given `userId`. Returns a
-     * simplified version of the master account data.
+     * Creates a query for retrieving the master accounts associated with the given
+     * `userId`. Result will contain simplified version of the master account data.
      */
-    findByUserId: (userId: ObjectId, callback?: (err: NativeError, res: Partial<MasterAccountDocument>[]) => void) =>
-        Query<Partial<MasterAccountDocument>[], MasterAccountDocument>;
+    findByUserId: (userId: ObjectId) => Query<Array<Partial<MasterAccountDocument>>, MasterAccountDocument>;
 
 };
 
@@ -31,14 +30,13 @@ type MasterAccountModel = Model<MasterAccountDocument> & {
 
 const findByUserId = function (
     this: MasterAccountModel,
-    userId: ObjectId,
-    callback?: (err: NativeError, res: Partial<MasterAccountDocument>[]) => void
-) {
+    userId: ObjectId
+): Query<Array<Partial<MasterAccountDocument>>, MasterAccountDocument> {
     const projection = {
         name: 1,
         friendId: 1
     };
-    return this.find({ userId }, projection, {}, callback);
+    return this.find({ userId }, projection, {});
 };
 
 //#endregion

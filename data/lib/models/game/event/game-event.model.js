@@ -23,14 +23,14 @@ exports.GameEventModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const schemas_1 = require("../../../schemas");
 //#region Static function implementations
-const findByYear = function (year, callback) {
+const findByYear = function (year) {
     const startDate = new Date(year, 0);
     const endDate = new Date(year + 1, 0);
     const dateQuery = {
         $gte: startDate,
         $lt: endDate
     };
-    return this.findOne({ startDate: dateQuery }, callback);
+    return this.find({ startDate: dateQuery });
 };
 //#endregion
 /**

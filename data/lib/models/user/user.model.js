@@ -32,10 +32,10 @@ exports.UserModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const schemas_1 = require("../../schemas");
 //#region Static function implementations
-const setEnabledStatus = function (id, status, callback) {
-    this.updateOne({ _id: id }, { active: status }, { new: true }, callback);
+const setEnabledStatus = function (id, status) {
+    this.updateOne({ _id: id }, { active: status }, { new: true });
 };
-const setAdminStatus = function (id, isAdmin, callback) {
+const setAdminStatus = function (id, isAdmin) {
     const update = {};
     if (isAdmin) {
         update.$set = { admin: true };
@@ -43,7 +43,7 @@ const setAdminStatus = function (id, isAdmin, callback) {
     else {
         update.$unset = { admin: null };
     }
-    this.updateOne({ _id: id }, update, { new: true }, callback);
+    this.updateOne({ _id: id }, update, { new: true });
 };
 const getUserPreferences = function (id) {
     return __awaiter(this, void 0, void 0, function* () {

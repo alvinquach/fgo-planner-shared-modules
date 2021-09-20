@@ -1,4 +1,4 @@
-import mongoose, { Document, Model, NativeError, Query, Schema } from 'mongoose';
+import mongoose, { Document, Model, Query, Schema } from 'mongoose';
 import { GameItemSchemaDefinition } from '../../../schemas';
 import { GameItem, GameItemUsage } from '../../../types';
 
@@ -10,11 +10,10 @@ export type GameItemDocument = Document & GameItem;
 type GameItemModel = Model<GameItemDocument> & {
 
     /**
-     * Creates a Query for retrieving the items that belong to any of the given
+     * Creates a query for retrieving the items that belong to any of the given
      * usages from the collection.
      */
-    findByUsage: (usage: GameItemUsage | GameItemUsage[], callback?: (err: NativeError, res: GameItemDocument[]) => void) =>
-        Query<GameItemDocument[], GameItemDocument>;
+    findByUsage: (usage: GameItemUsage | GameItemUsage[]) => Query<GameItemDocument[], GameItemDocument>;
 
 };
 
@@ -22,13 +21,12 @@ type GameItemModel = Model<GameItemDocument> & {
 
 const findByUsage = function (
     this: GameItemModel,
-    usage: GameItemUsage | GameItemUsage[],
-    callback?: (err: NativeError, res: GameItemDocument[]) => void
-) {
+    usage: GameItemUsage | GameItemUsage[]
+): Query<GameItemDocument[], GameItemDocument> {
     if (!Array.isArray(usage)) {
         usage = [usage];
     }
-    return this.findOne({ uses: { $in: usage } }, callback);
+    return this.find({ uses: { $in: usage } });
 };
 
 //#endregion

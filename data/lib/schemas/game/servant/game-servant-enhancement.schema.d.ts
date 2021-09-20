@@ -2,4 +2,4 @@ import { Schema } from 'mongoose';
 /**
  * Mongoose schema for the `GameServantEnhancement` type.
  */
-export declare const GameServantEnhancementSchema: Schema<import("mongoose").Document<any>, import("mongoose").Model<import("mongoose").Document<any>>, undefined>;
+export declare const GameServantEnhancementSchema: Schema<any, import("mongoose").Model<any, any, any>, {}>;

@@ -1,5 +1,5 @@
 import { ObjectId } from 'bson';
-import mongoose, { Document, Model, NativeError, Schema } from 'mongoose';
+import mongoose, { Document, Model, Schema } from 'mongoose';
 import { UserSchemaDefinition } from '../../schemas';
 import { User, UserPreferences } from '../../types';
 
@@ -7,9 +7,9 @@ export type UserDocument = Document & User;
 
 type UserModel = Model<UserDocument> & {
 
-    setEnabledStatus: (id: ObjectId, status: boolean, callback: (err: NativeError, doc: UserDocument) => void) => void;
+    setEnabledStatus: (id: ObjectId, status: boolean) => void;
 
-    setAdminStatus: (id: ObjectId, isAdmin: boolean, callback: (err: NativeError, doc: UserDocument) => void) => void;
+    setAdminStatus: (id: ObjectId, isAdmin: boolean) => void;
 
     getUserPreferences: (id: ObjectId) => Promise<UserPreferences | null>;
 
@@ -20,24 +20,22 @@ type UserModel = Model<UserDocument> & {
 const setEnabledStatus = function (
     this: UserModel,
     id: ObjectId,
-    status: boolean,
-    callback: (err: NativeError, doc: UserDocument) => void
-) {
-    this.updateOne({ _id: id }, { active: status }, { new: true }, callback);
+    status: boolean
+): void {
+    this.updateOne({ _id: id }, { active: status }, { new: true });
 };
 
 const setAdminStatus = function (this: UserModel,
     id: ObjectId,
-    isAdmin: boolean,
-    callback: (err: NativeError, doc: UserDocument) => void
-) {
+    isAdmin: boolean
+): void {
     const update: any = {};
     if (isAdmin) {
         update.$set = { admin: true };
     } else {
         update.$unset = { admin: null };
     }
-    this.updateOne({ _id: id }, update, { new: true }, callback);
+    this.updateOne({ _id: id }, update, { new: true });
 };
 
 const getUserPreferences = async function (

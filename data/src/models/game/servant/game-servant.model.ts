@@ -1,4 +1,4 @@
-import mongoose, { Document, Model, NativeError, Query, Schema } from 'mongoose';
+import mongoose, { Document, Model, Query, Schema } from 'mongoose';
 import { GameServantSchemaDefinition } from '../../../schemas';
 import { GameServant, GameServantClass } from '../../../types';
 
@@ -10,17 +10,15 @@ export type GameServantDocument = Document & GameServant;
 type GameServantModel = Model<GameServantDocument> & {
 
     /**
-     * Creates a Query to find a single document by its `collectionNo` field.
+     * Creates a query to find a single document by its `collectionNo` field.
      */
-    findByCollectionNo: (collectionNo: number, callback?: (err: NativeError, res: GameServantDocument) => void) =>
-        Query<GameServantDocument, GameServantDocument>;
+    findByCollectionNo: (collectionNo: number) => Query<GameServantDocument, GameServantDocument>;
 
     /**
-     * Creates a Query for retrieving all the documents with the given `class` in
+     * Creates a query for retrieving all the documents with the given `class` in
      * the collection.
      */
-    findByClass: (cls: GameServantClass, callback?: (err: NativeError, res: GameServantDocument[]) => void) => 
-        Query<GameServantDocument[], GameServantDocument>;
+    findByClass: (cls: GameServantClass) => Query<GameServantDocument[], GameServantDocument>;
 
 };
 
@@ -28,18 +26,16 @@ type GameServantModel = Model<GameServantDocument> & {
 
 const findByCollectionNo = function (
     this: GameServantModel,
-    collectionNo: number,
-    callback?: (err: NativeError, res: GameServantDocument) => void
-) {
-    return this.findOne({ collectionNo }, callback);
+    collectionNo: number
+): Query<GameServantDocument | null, GameServantDocument> {
+    return this.findOne({ collectionNo });
 };
 
 const findByClass = function (
     this: GameServantModel,
-    cls: GameServantClass,
-    callback?: (err: NativeError, res: GameServantDocument[]) => void
-) {
-    return this.find({ class : cls }, callback);
+    cls: GameServantClass
+): Query<GameServantDocument[], GameServantDocument> {
+    return this.find({ class : cls });
 };
 
 

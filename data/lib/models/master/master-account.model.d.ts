@@ -1,5 +1,5 @@
 import { ObjectId } from 'bson';
-import { Document, Model, NativeError, Query } from 'mongoose';
+import { Document, Model, Query } from 'mongoose';
 import { MasterAccount } from '../../types';
 export declare type MasterAccountDocument = Document & MasterAccount;
 /**
@@ -12,10 +12,10 @@ declare type MasterAccountModel = Model<MasterAccountDocument> & {
      */
     isFriendIdFormatValid: (id: string) => boolean;
     /**
-     * Finds the master accounts associated with the given `userId`. Returns a
-     * simplified version of the master account data.
+     * Creates a query for retrieving the master accounts associated with the given
+     * `userId`. Result will contain simplified version of the master account data.
      */
-    findByUserId: (userId: ObjectId, callback?: (err: NativeError, res: Partial<MasterAccountDocument>[]) => void) => Query<Partial<MasterAccountDocument>[], MasterAccountDocument>;
+    findByUserId: (userId: ObjectId) => Query<Array<Partial<MasterAccountDocument>>, MasterAccountDocument>;
 };
 export declare const MasterAccountModel: MasterAccountModel;
 export {};

@@ -23,12 +23,12 @@ exports.PlanGroupModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const schemas_1 = require("../../schemas");
 //#region Static function implementations
-const findByAccountId = function (accountId, callback) {
+const findByAccountId = function (accountId) {
     const projection = {
         name: 1,
         description: 1
     };
-    return this.find({ accountId }, projection, {}, callback);
+    return this.find({ accountId }, projection);
 };
 //#endregion
 /**

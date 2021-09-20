@@ -23,7 +23,7 @@ exports.PlanModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const schemas_1 = require("../../schemas");
 //#region Static function implementations
-const findByAccountId = function (accountId, callback) {
+const findByAccountId = function (accountId) {
     const projection = {
         groupId: 1,
         name: 1,
@@ -32,10 +32,10 @@ const findByAccountId = function (accountId, callback) {
         autoUpdate: 1,
         shared: 1
     };
-    return this.find({ accountId }, projection, {}, callback);
+    return this.find({ accountId }, projection);
 };
-const removeFromGroup = function (groupId, callback) {
-    return this.updateMany({ groupId }, { $unset: { groupId: 1 } }, {}, callback);
+const removeFromGroup = function (groupId) {
+    return this.updateMany({ groupId }, { $unset: { groupId: 1 } });
 };
 //#endregion
 /**
