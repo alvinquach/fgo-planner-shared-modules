@@ -10,8 +10,4 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(require("./connection"), exports);
-__exportStar(require("./models"), exports);
-__exportStar(require("./schemas"), exports);
-__exportStar(require("./types"), exports);
-__exportStar(require("./validators"), exports);
+__exportStar(require("./mongoose-connection"), exports);
