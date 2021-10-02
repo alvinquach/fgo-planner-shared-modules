@@ -2,9 +2,10 @@
     "name": "@fgo-planner/types",
     "version": "1.0.0",
     "scripts": {
-        "build": "npm run build-ts && npm run lint",
-        "build-ts": "tsc --strict",
-        "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix"
+        "clean": "rimraf lib",
+        "build-ts": "npm run clean && tsc --strict",
+        "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
+        "build": "npm run lint"
     },
     "repository": {
         "type": "git",
@@ -22,6 +23,7 @@
         "@typescript-eslint/eslint-plugin": "^4.18.0",
         "@typescript-eslint/parser": "^4.18.0",
         "eslint": "^7.22.0",
+        "rimraf": "^3.0.2",
         "typescript": "^4.2.3"
     }
 }
