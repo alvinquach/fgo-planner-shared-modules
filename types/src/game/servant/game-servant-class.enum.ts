@@ -20,5 +20,6 @@ export enum GameServantClass {
     BeastIIIR = 'BeastIIIR',
     BeastIIIL = 'BeastIIIL',
     BeastFalse = 'BeastFalse',
+    Pretender = 'Pretender',
     Unknown = 'Unknown'
 }
