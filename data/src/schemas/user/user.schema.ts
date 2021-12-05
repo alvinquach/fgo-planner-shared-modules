@@ -8,6 +8,7 @@ export const UserSchemaDefinition: SchemaDefinition = {
     username: {
         type: String,
         // TODO Add validation
+        lowercase: true,
         required: true,
         unique: true,
         index: true
@@ -18,6 +19,7 @@ export const UserSchemaDefinition: SchemaDefinition = {
     email: {
         type: String,
         // TODO Add validation
+        lowercase: true,
         required: false,
         unique: true,
         sparse: true
