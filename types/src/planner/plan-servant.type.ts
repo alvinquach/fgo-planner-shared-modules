@@ -1,5 +1,5 @@
 import { PlanServantEnhancements } from './plan-servant-enhancements.type';
-import { PlanServantType } from './plan-servant-type.type';
+import { PlanServantType } from './plan-servant-type.enum';
 
 export type PlanServant = {
 

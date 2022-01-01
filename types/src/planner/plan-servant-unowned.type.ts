@@ -1,10 +1,10 @@
 import { PlanServant } from './plan-servant.type';
 import { PlanServantType } from './plan-servant-type.enum';
 
-export type PlanServantOwned = PlanServant & {
+export type PlanServantUnowned = PlanServant & {
 
-    type: PlanServantType.Owned;
+    type: PlanServantType.Unowned;
 
-    instanceId: number;
+    collectionNo: number;
 
 };
