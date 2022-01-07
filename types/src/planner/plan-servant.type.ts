@@ -13,6 +13,8 @@ export type PlanServant = {
 
         skills: boolean;
 
+        appendSkills: boolean;
+
         costumes: boolean;
 
     };

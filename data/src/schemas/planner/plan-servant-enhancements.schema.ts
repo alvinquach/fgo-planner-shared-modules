@@ -78,6 +78,11 @@ export const PlanServantEnhancementsSchema = new Schema({
         type: PlanServantEnhancementsSkillsSchema,
         required: true,
         default: {}
+    },
+    appendSkills: {
+        type: PlanServantEnhancementsSkillsSchema,
+        required: true,
+        default: {}
     }
 } as SchemaDefinition, {
     _id: false,

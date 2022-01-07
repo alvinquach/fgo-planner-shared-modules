@@ -22,6 +22,11 @@ export const PlanServantEnabledSchema = new Schema({
         required: true,
         default: true
     },
+    appendSkills: {
+        type: Boolean,
+        required: true,
+        default: true
+    },
     costumes: {
         type: Boolean,
         required: true,
