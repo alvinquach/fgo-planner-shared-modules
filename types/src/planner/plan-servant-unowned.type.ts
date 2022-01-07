@@ -5,6 +5,6 @@ export type PlanServantUnowned = PlanServant & {
 
     type: PlanServantType.Unowned;
 
-    collectionNo: number;
+    gameId: number;
 
 };

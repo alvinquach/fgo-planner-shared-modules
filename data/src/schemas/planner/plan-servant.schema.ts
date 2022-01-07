@@ -53,7 +53,7 @@ export const PlanServantSchema = new Schema({
             message: ValidationStrings.NumberInteger
         }
     },
-    collectionNo: {
+    gameId: {
         type: Number,
         validate: {
             validator: CommonValidators.isNullOrInteger,
