@@ -30,4 +30,6 @@ export type PlanServantEnhancements = {
 
     };
 
+    costumes: number[];
+
 };

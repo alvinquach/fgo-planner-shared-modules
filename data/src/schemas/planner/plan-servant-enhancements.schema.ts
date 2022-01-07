@@ -83,6 +83,11 @@ export const PlanServantEnhancementsSchema = new Schema({
         type: PlanServantEnhancementsSkillsSchema,
         required: true,
         default: {}
+    },
+    costumes: {
+        type: [Number],
+        required: true,
+        default: []
     }
 } as SchemaDefinition, {
     _id: false,
