@@ -49,14 +49,17 @@ export const PlanServantSchema = new Schema({
     instanceId: {
         type: Number,
         validate: {
+            // TODO Validate that instanceId is present if type is Owned.
             validator: CommonValidators.isNullOrInteger,
             message: ValidationStrings.NumberInteger
         }
     },
     gameId: {
         type: Number,
+        required: true,
+        min: 0,
         validate: {
-            validator: CommonValidators.isNullOrInteger,
+            validator: Number.isInteger,
             message: ValidationStrings.NumberInteger
         }
     },

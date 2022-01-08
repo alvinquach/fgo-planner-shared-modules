@@ -5,6 +5,8 @@ export type PlanServant = {
 
     type: PlanServantType;
 
+    gameId: number;
+
     enabled: {
 
         servant: boolean;
