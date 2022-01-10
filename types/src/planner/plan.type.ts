@@ -1,7 +1,6 @@
 import { Entity } from '../entity.type';
 import { GameItemQuantity } from '../game/item/game-item-quantity.type';
-import { PlanServantOwned } from './plan-servant-owned.type';
-import { PlanServantUnowned } from './plan-servant-unowned.type';
+import { PlanServant } from './plan-servant.type';
 
 export type Plan<ID = string> = Entity<ID> & {
 
@@ -25,7 +24,7 @@ export type Plan<ID = string> = Entity<ID> & {
 
     shared: boolean;
 
-    servants: Array<PlanServantOwned | PlanServantUnowned>;
+    servants: Array<PlanServant>;
 
     /**
      * Cached inventory data. Used when auto-update is disabled.
