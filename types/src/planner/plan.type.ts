@@ -14,6 +14,18 @@ export type Plan<ID = string> = Entity<ID> & {
 
     targetDate?: Date;
 
+    enabled: {
+
+        ascensions: boolean;
+
+        skills: boolean;
+
+        appendSkills: boolean;
+
+        costumes: boolean;
+
+    };
+
     /**
      * Whether to automatically update or sync the plan's servants and inventory
      * data with the latest master data.
@@ -23,7 +35,7 @@ export type Plan<ID = string> = Entity<ID> & {
     autoUpdate: boolean;
 
     shared: boolean;
-
+    
     servants: Array<PlanServant>;
 
     /**
