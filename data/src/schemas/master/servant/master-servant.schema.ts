@@ -34,6 +34,9 @@ const MasterServantSkillLevelsSchema = new Schema({
             message: ValidationStrings.NumberInteger
         }
     }
+}, {
+    _id: false,
+    storeSubdocValidationError: false
 });
 
 /**
@@ -67,6 +70,9 @@ const MasterServantAppendSkillLevelsSchema = new Schema({
             message: ValidationStrings.NumberInteger
         }
     }
+}, {
+    _id: false,
+    storeSubdocValidationError: false
 });
 
 /**

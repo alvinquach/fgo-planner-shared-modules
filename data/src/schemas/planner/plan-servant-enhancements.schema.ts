@@ -32,6 +32,9 @@ const PlanServantEnhancementsSkillsSchema = new Schema({
             message: ValidationStrings.NumberInteger
         }
     }
+}, {
+    _id: false,
+    storeSubdocValidationError: false
 });
 
 /**
