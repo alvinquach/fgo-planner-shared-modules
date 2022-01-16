@@ -1,4 +1,5 @@
 import { MasterServantAscensionLevel } from '../master/servant/master-servant-ascension-level.type';
+import { MasterServantSkillLevel } from '../master/servant/master-servant-skill-level.type';
 
 export type PlanServantEnhancements = {
 
@@ -12,21 +13,21 @@ export type PlanServantEnhancements = {
 
     skills: {
 
-        1?: number;
+        1?: MasterServantSkillLevel;
 
-        2?: number;
+        2?: MasterServantSkillLevel;
 
-        3?: number;
+        3?: MasterServantSkillLevel;
 
     };
     
     appendSkills: {
 
-        1?: number;
+        1?: MasterServantSkillLevel;
 
-        2?: number;
+        2?: MasterServantSkillLevel;
 
-        3?: number;
+        3?: MasterServantSkillLevel;
 
     };
 
