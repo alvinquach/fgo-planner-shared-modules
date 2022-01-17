@@ -38,13 +38,29 @@ export class MasterAccountValidators {
         return value % 20 === 0;
     }
 
-    static servantInstanceIdsUnique(servants: { instanceId: number }[]): boolean {
+    static servantInstanceIdsUnique(servants: Array<{ instanceId: number }>): boolean {
         if (!servants.length) {
             return true;
         }
         const instanceIds = new Set<number>();
-        for (const servant of servants) {
-            const instanceId = servant.instanceId;
+        for (const { instanceId } of servants) {
+            if (instanceIds.has(instanceId)) {
+                return false;
+            }
+            instanceIds.add(instanceId);
+        }
+        return true;
+    }
+
+    static servantInstanceIdsNullOrUnique(servants: Array<{ instanceId: number | null | undefined }>): boolean {
+        if (!servants.length) {
+            return true;
+        }
+        const instanceIds = new Set<number>();
+        for (const { instanceId } of servants) {
+            if (instanceId == null) {
+                continue;
+            }
             if (instanceIds.has(instanceId)) {
                 return false;
             }
