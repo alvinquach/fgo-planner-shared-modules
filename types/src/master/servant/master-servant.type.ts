@@ -1,32 +1,62 @@
 import { MasterServantAscensionLevel } from './master-servant-ascension-level.type';
-import { MasterServantBondLevel } from './master-servant-bond-level.type';
 import { MasterServantNoblePhantasmLevel } from './master-servant-noble-phantasm-level.type';
 import { MasterServantSkillLevel } from './master-servant-skill-level.type';
 
 /**
- * Represents an instance of a servant that is owned by a master.
+ * An instance of a servant that is associated with a `MasterAccount`.
  */
 export type MasterServant = {
 
+    /**
+     * The identifier of this instance. This is unique for each servant in a
+     * `MasterAccount`.
+     */
     instanceId: number;
 
+    /**
+     * The ID of the `GameServant` that this servant is an instance of.
+     */
     gameId: number;
-    
+
+    /**
+     * Whether the servant has already been summoned by the master, or is just
+     * tentative.
+     */
+    summoned: boolean;
+
+    /**
+     * The servant's summoning date.
+     */
+    summonDate?: Date;
+
+    /**
+     * The noble phantasm level of the servant.
+     */
     np: MasterServantNoblePhantasmLevel;
 
+    /**
+     * The level of the servant.
+     */
     level: number;
 
+    /**
+     * The ascension level of the servant.
+     */
     ascension: MasterServantAscensionLevel;
 
     /**
-     * @deprecated Bond levels are now stored at the account level.
+     * The attack fou enhancement of the servant.
      */
-    bond?: MasterServantBondLevel;
-
     fouAtk?: number;
 
+    /**
+     * The HP fou enhancement of the servant.
+     */
     fouHp?: number;
 
+    /**
+     * The servant's skill levels.
+     */
     skills: {
 
         1: MasterServantSkillLevel;
@@ -37,6 +67,9 @@ export type MasterServant = {
 
     };
 
+    /**
+     * The servant's append skill levels.
+     */
     appendSkills: {
 
         1?: MasterServantSkillLevel;
@@ -46,7 +79,5 @@ export type MasterServant = {
         3?: MasterServantSkillLevel;
 
     };
-
-    acquired?: Date;
 
 };

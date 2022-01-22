@@ -52,6 +52,10 @@ export class MasterAccountValidators {
         return true;
     }
 
+    /**
+     * @deprecated The `instanceId` is now always required for both `MasterServant`
+     * and `PlanServant`, so this validator is no longer used.
+     */
     static servantInstanceIdsNullOrUnique(servants: Array<{ instanceId: number | null | undefined }>): boolean {
         if (!servants.length) {
             return true;

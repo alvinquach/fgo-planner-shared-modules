@@ -97,8 +97,7 @@ export const PlanSchemaDefinition: SchemaDefinition = {
         type: [PlanServantSchema],
         required: true,
         validate: {
-            // TODO Validate that there are no duplicate gameId for unowned servants
-            validator: MasterAccountValidators.servantInstanceIdsNullOrUnique,
+            validator: MasterAccountValidators.servantInstanceIdsUnique,
             message: ValidationStrings.MasterServantUniqueInstanceId
         },
         default: []

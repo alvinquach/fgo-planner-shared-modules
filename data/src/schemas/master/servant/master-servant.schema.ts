@@ -83,7 +83,6 @@ export const MasterServantSchema = new Schema({
         type: Number,
         required: true,
         validate: {
-            // TODO This must be unique
             validator: Number.isInteger,
             message: ValidationStrings.NumberInteger
         }
@@ -96,6 +95,15 @@ export const MasterServantSchema = new Schema({
             validator: Number.isInteger,
             message: ValidationStrings.NumberInteger
         }
+    },
+    summoned: {
+        type: Boolean,
+        required: true,
+        default: true
+    },
+    summonDate: {
+        type: Date
+        // TODO Add range validation
     },
     np: {
         type: Number,
@@ -157,10 +165,6 @@ export const MasterServantSchema = new Schema({
         type: MasterServantAppendSkillLevelsSchema,
         required: true,
         default: {}
-    },
-    acquired: {
-        type: Date
-        // TODO Add range validation
     }
 } as SchemaDefinition, {
     _id: false,
