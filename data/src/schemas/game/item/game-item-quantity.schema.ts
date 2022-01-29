@@ -17,12 +17,12 @@ export const GameItemQuantitySchema = new Schema({
     quantity: {
         type: Number,
         required: true,
-        min: 1,
+        min: 0,
         validate: {
             validator: Number.isInteger,
             message: ValidationStrings.NumberInteger
         },
-        default: 1
+        default: 0
     }
 } as SchemaDefinition, {
     _id: false,

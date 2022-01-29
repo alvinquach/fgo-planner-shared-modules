@@ -1,8 +1,39 @@
 import { ObjectId } from 'bson';
-import { SchemaDefinition } from 'mongoose';
+import { Schema, SchemaDefinition } from 'mongoose';
 import { CommonValidators, MasterAccountValidators, ValidationStrings } from '../../../validators';
-import { MasterItemSchema } from '../item/master-item.schema';
+import { GameEmberQuantitiesSchema } from '../../game/ember/game-ember-quantities.schema';
+import { GameItemQuantitySchema } from '../../game/item/game-item-quantity.schema';
 import { MasterServantSchema } from '../servant/master-servant.schema';
+
+/**
+ * Mongoose schema for the `MasterAccount.resources` property.
+ */
+export const MasterAccountResourcesSchema = new Schema({
+    items: {
+        type: [GameItemQuantitySchema],
+        required: true,
+        default: []
+    },
+    embers: {
+        type: GameEmberQuantitiesSchema,
+        required: true,
+        default: {}
+    },
+    qp: {
+        type: Number,
+        required: true,
+        min: 0,
+        max: 2000000000, // TODO Define this as a constant
+        validate: {
+            validator: Number.isInteger,
+            message: ValidationStrings.NumberInteger
+        },
+        default: 0
+    }
+} as SchemaDefinition, {
+    _id: false,
+    storeSubdocValidationError: false
+});
 
 /**
  * Mongoose schema definition for the `MasterAccount` type.
@@ -36,21 +67,10 @@ export const MasterAccountSchemaDefinition: SchemaDefinition = {
         },
         default: null
     },
-    qp: {
-        type: Number,
+    resources: {
+        type: MasterAccountResourcesSchema,
         required: true,
-        min: 0,
-        max: 2000000000, // TODO Define this as a constant
-        validate: {
-            validator: Number.isInteger,
-            message: ValidationStrings.NumberInteger
-        },
-        default: 0
-    },
-    items: {
-        type: [MasterItemSchema],
-        required: true,
-        default: []
+        default: {}
     },
     servants: {
         type: [MasterServantSchema],

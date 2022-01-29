@@ -1,7 +1,8 @@
+import { GameItemQuantity } from '../../game/item/game-item-quantity.type';
 import { Entity } from '../../entity.type';
-import { MasterItem } from '../item/master-item.type';
 import { MasterServantBondLevel } from '../servant/master-servant-bond-level.type';
 import { MasterServant } from '../servant/master-servant.type';
+import { GameEmberQuantities } from 'src/game/ember/game-ember-quantities.type';
 
 export type MasterAccount<ID = string> = Entity<ID> & {
 
@@ -16,9 +17,15 @@ export type MasterAccount<ID = string> = Entity<ID> & {
 
     exp?: number;
 
-    qp: number;
+    resources: {
 
-    items: MasterItem[];
+        items: Array<GameItemQuantity>;
+
+        embers: GameEmberQuantities;
+
+        qp: number;
+
+    };
 
     servants: MasterServant[];
 

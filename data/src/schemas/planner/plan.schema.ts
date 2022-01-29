@@ -1,8 +1,8 @@
 import { ObjectId } from 'bson';
 import { Schema, SchemaDefinition } from 'mongoose';
 import { MasterAccountValidators, ValidationStrings } from '../../validators';
-import { GameItemQuantitySchema } from '../game/item/game-item-quantity.schema';
 import { PlanServantSchema } from './plan-servant.schema';
+import { PlanUpcomingResourcesSchema } from './plan-upcoming-resources.schema';
 
 /**
  * Mongoose schema for the `PlanServant.enabled` property.
@@ -27,25 +27,6 @@ export const PlanEnabledSchema = new Schema({
         type: Boolean,
         required: true,
         default: true
-    }
-} as SchemaDefinition, {
-    _id: false,
-    storeSubdocValidationError: false
-});
-
-/**
- * Mongoose schema for the `Plan.inventory` property.
- */
-const PlanInventorySchema = new Schema({
-    items: {
-        type: [GameItemQuantitySchema],
-        required: true,
-        default: []
-    },
-    qp: {
-        type: Number,
-        required: true,
-        default: 0
     }
 } as SchemaDefinition, {
     _id: false,
@@ -83,11 +64,6 @@ export const PlanSchemaDefinition: SchemaDefinition = {
         required: true,
         default: {}
     },
-    autoUpdate: {
-        type: Boolean,
-        required: true,
-        default: false
-    },
     shared: {
         type: Boolean,
         required: true,
@@ -102,9 +78,9 @@ export const PlanSchemaDefinition: SchemaDefinition = {
         },
         default: []
     },
-    inventory: {
-        type: PlanInventorySchema,
+    upcomingResources: {
+        type: [PlanUpcomingResourcesSchema],
         required: true,
-        default: {}
+        default: []
     }
 };
