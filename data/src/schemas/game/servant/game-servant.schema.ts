@@ -1,9 +1,10 @@
 import { Schema, SchemaDefinition } from 'mongoose';
-import { GameServantAttribute, GameServantClass, GameServantGender } from '../../../types';
+import { GameServantAttribute, GameServantClass, GameServantGachaType, GameServantGender } from '../../../types';
 import { ValidationStrings } from '../../../validators';
-import { ExternalLinkSchema } from '../../external-link.schema';
 import { GameServantCostumeSchema } from './game-servant-costume.schema';
 import { GameServantEnhancementSchema } from './game-servant-enhancement.schema';
+import { GameServantMetadataSchema } from './game-servant-metadata.schema';
+import { GameServantNoblePhantasmSchema } from './game-servant-noble-phantasm.schema';
 
 /**
  * Mongoose schema for the `GameServant.skillMaterials` property.
@@ -89,26 +90,6 @@ const GameServantAscensionMaterialsSchema = new Schema({
 });
 
 /**
- * Mongoose schema for the `GameServant.metadata` property.
- */
-const GameServantMetadataSchema = new Schema({
-    displayName: {
-        type: String
-    },
-    fgoManagerName: {
-        type: String
-    },
-    links: {
-        type: [ExternalLinkSchema],
-        required: true,
-        default: []
-    }
-} as SchemaDefinition, {
-    _id: false,
-    storeSubdocValidationError: false
-});
-
-/**
  * Mongoose schema definition for the `GameServant` data schema.
  */
 export const GameServantSchemaDefinition: SchemaDefinition = {
@@ -134,6 +115,10 @@ export const GameServantSchemaDefinition: SchemaDefinition = {
     name: {
         type: String,
         index: true
+    },
+    gachaType: {
+        type: String,
+        enum: Object.keys(GameServantGachaType)
     },
     class: {
         type: String,
@@ -246,6 +231,11 @@ export const GameServantSchemaDefinition: SchemaDefinition = {
             message: ValidationStrings.NumberInteger
         },
         default: 0
+    },
+    np: {
+        type: [GameServantNoblePhantasmSchema],
+        required: true,
+        default: []
     },
     skillMaterials: {
         type: GameServantSkillMaterialsSchema,

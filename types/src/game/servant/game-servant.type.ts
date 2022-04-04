@@ -1,11 +1,13 @@
 import { Entity } from '../../entity.type';
-import { ExternalLink } from '../../external-link.type';
 import { GameServantAscensionMaterials } from './game-servant-ascension-materials';
 import { GameServantAttribute } from './game-servant-attribute.enum';
 import { GameServantClass } from './game-servant-class.enum';
 import { GameServantCostume } from './game-servant-costume.type';
+import { GameServantGachaType } from './game-servant-gacha-type.enum';
 import { GameServantGender } from './game-servant-gender.enum';
 import { GameServantGrowthCurve } from './game-servant-growth-curve.enum';
+import { GameServantMetadata } from './game-servant-metadata.type';
+import { GameServantNoblePhantasm } from './game-servant-noble-phantasm.type';
 import { GameServantRarity } from './game-servant-rarity.type';
 import { GameServantSkillMaterials } from './game-servant-skill-materials';
 
@@ -14,6 +16,8 @@ export type GameServant = Entity<number> & {
     collectionNo: number;
 
     name?: string;
+
+    gachaType?: GameServantGachaType;
 
     class: GameServantClass;
 
@@ -54,6 +58,21 @@ export type GameServant = Entity<number> & {
 
     growthCurve: GameServantGrowthCurve;
 
+    /**
+     * Contains the unique noble phantasm card type and target combinations for the
+     * servant, used for filtering purposes. Duplicate combinations are only
+     * included once.
+     *
+     * Examples:
+     * - Fairy Knight Lancelot has two noble phantasms: an arts type single target
+     *   and a buster type AOE. She will have two entries under this field.
+     * - Space Ishtar has switchable noble phantasm card types. She will have three
+     *   entries under this field.
+     * - Mash has two noble phantasm, but both are support art types. She will only
+     *   have one entry under this field.
+     */
+    np: Array<GameServantNoblePhantasm>;
+
     skillMaterials: GameServantSkillMaterials;
 
     appendSkillMaterials: GameServantSkillMaterials;
@@ -62,14 +81,6 @@ export type GameServant = Entity<number> & {
 
     costumes: Record<number, GameServantCostume>;
 
-    metadata: {
-
-        displayName?: string;
-
-        fgoManagerName?: string;
-
-        links: ExternalLink[];
-
-    };
+    metadata: GameServantMetadata;
 
 };
