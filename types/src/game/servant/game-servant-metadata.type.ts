@@ -1,4 +1,4 @@
-import { ExternalLink } from 'src/external-link.type';
+import { ExternalLink } from '../../external-link.type';
 
 export type GameServantMetadata = {
 

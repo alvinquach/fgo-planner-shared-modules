@@ -1,8 +1,8 @@
-import { GameItemQuantity } from '../../game/item/game-item-quantity.type';
 import { Entity } from '../../entity.type';
+import { GameEmberQuantities } from '../../game/ember/game-ember-quantities.type';
+import { GameItemQuantity } from '../../game/item/game-item-quantity.type';
 import { MasterServantBondLevel } from '../servant/master-servant-bond-level.type';
 import { MasterServant } from '../servant/master-servant.type';
-import { GameEmberQuantities } from 'src/game/ember/game-ember-quantities.type';
 
 export type MasterAccount<ID = string> = Entity<ID> & {
 
