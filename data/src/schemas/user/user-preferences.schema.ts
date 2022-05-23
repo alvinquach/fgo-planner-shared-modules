@@ -17,6 +17,10 @@ const UserWebClientThemeSchema = new Schema({
         type: RgbaColorSchema,
         required: true
     },
+    drawerColor: {
+        type: RgbaColorSchema,
+        required: true
+    },
     primaryColor: {
         type: RgbaColorSchema,
         required: true

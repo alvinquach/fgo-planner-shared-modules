@@ -8,6 +8,8 @@ export type UserWebClientTheme = {
 
     foregroundColor: RgbaColor;
 
+    drawerColor: RgbaColor;
+
     primaryColor: RgbaColor;
 
     secondaryColor: RgbaColor;
